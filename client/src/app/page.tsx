@@ -1,13 +1,5 @@
-import Navbar from "@/components/navbar";
-import Hero from "@/components/hero";
-import Footer from "@/components/footer";
+import { MaintenancePage } from "@/components/MaintenancePage";
 
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-black">
-      <Navbar />
-      <Hero />
-      <Footer />
-    </div>
-  );
+export default function Maintenance() {
+  return <MaintenancePage />;
 }
