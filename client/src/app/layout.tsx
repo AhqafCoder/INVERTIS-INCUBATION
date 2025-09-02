@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Invertis Incubation Center - Empowering Startups",
+  title: "Invertis Incubation Center",
   description: "Invertis Incubation Center supports startups with mentorship, resources, and innovation to drive entrepreneurial success.",
   keywords: ["incubation center", "startups", "Invertis", "entrepreneurship", "innovation", "business growth", "mentorship"],
   icons: {

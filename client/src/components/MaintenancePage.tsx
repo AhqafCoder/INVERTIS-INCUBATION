@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Mail } from "lucide-react";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import { AlertDialog, AlertDialogFooter, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 
 export function MaintenancePage() {
   return (
@@ -18,10 +18,10 @@ export function MaintenancePage() {
             </AlertDescription>
           </Alert>
           <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-bold">
-            We're Working on It!
+            We&apos;re Working on It!
           </CardTitle>
           <CardDescription className="text-sm sm:text-base text-muted-foreground">
-            Our site is temporarily down for maintenance. We'll be back soon with improvements.
+            Our site is temporarily down for maintenance. We&apos;ll be back soon with improvements.
             Estimated time: 2-3 hours.
           </CardDescription>
         </CardHeader>
