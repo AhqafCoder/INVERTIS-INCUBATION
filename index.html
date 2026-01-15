@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invertis Incubation</title>
+  <meta name="description" content="Invertis Innovation & Incubation (III) is the hub for innovators and entrepreneurs at Invertis University, Bareilly. III offers mentoring, funding, industry partnerships, and a vibrant ecosystem to help startups and students turn ideas into impactful businesses. Discover our programs, success stories, and partners driving innovation in technology, healthcare, sustainability, and social impact.">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- AOS Animation -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    rel="stylesheet"
+  />
+</head>
+<body class="antialiased overflow-x-hidden">
+
+  <!-- ================= RESPONSIVE NAVBAR ================= -->
+  <nav class="flex justify-between items-center bg-gradient-to-r from-blue-100 to-blue-200 border-b-4 h-[80px] sm:h-[100px] lg:h-[120px] shadow-lg relative z-[12000] px-2 sm:px-4">
+    <!-- LOGO -->
+    <div class="logo ml-2 sm:ml-4 lg:ml-[70px]">
+      <a href="index.html">
+        <img
+          src="/assets/incub-logo.png"
+          alt="Invertis Incubation Logo"
+          class="cursor-pointer mt-1 sm:mt-2 h-[60px] sm:h-[80px] lg:h-[130px] w-[90px] sm:w-[120px] lg:w-[200px] object-contain"
+        />
+      </a>
+    </div>
+
+    <!-- MOBILE MENU (Sidebar) -->
+    <div class="block lg:hidden mr-2 sm:mr-4 lg:mr-10 relative">
+      <!-- Hamburger Button -->
+      <button
+        id="mobile-menu-button"
+        aria-expanded="false"
+        aria-controls="mobile-sidebar"
+        class="mt-1 sm:mt-3 focus:outline-none p-2"
+        aria-label="Open mobile menu"
+        type="button"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" sm:width="40" sm:height="50" viewBox="0 0 48 48" role="img" class="w-8 h-8 sm:w-10 sm:h-12">
+          <linearGradient id="line1" x1="12" x2="35" y1="0" y2="23" gradientUnits="userSpaceOnUse">
+            <stop offset=".237" stop-color="#3bc9f3"/>
+            <stop offset=".85" stop-color="#1591d8"/>
+          </linearGradient>
+          <path fill="url(#line1)" d="M43,15H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,14.1,44.1,15,43,15z"/>
+          <linearGradient id="line2" x1="12" x2="35" y1="12" y2="35" gradientUnits="userSpaceOnUse">
+            <stop offset=".237" stop-color="#3bc9f3"/>
+            <stop offset=".85" stop-color="#1591d8"/>
+          </linearGradient>
+          <path fill="url(#line2)" d="M43,27H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,26.1,44.1,27,43,27z"/>
+          <linearGradient id="line3" x1="12" x2="35" y1="24" y2="47" gradientUnits="userSpaceOnUse">
+            <stop offset=".237" stop-color="#3bc9f3"/>
+            <stop offset=".85" stop-color="#1591d8"/>
+          </linearGradient>
+          <path fill="url(#line3)" d="M43,39H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,38.1,44.1,39,43,39z"/>
+        </svg>
+      </button>
+
+      <!-- Overlay -->
+      <div id="mobile-overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-[11900]"></div>
+
+      <!-- Sliding Sidebar -->
+      <aside
+        id="mobile-sidebar"
+        class="fixed top-0 right-0 h-screen w-[280px] sm:w-[320px] bg-white shadow-2xl z-[12100] transform translate-x-full transition-transform duration-300 overflow-y-auto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-menu-heading"
+      >
+        <div class="flex items-center justify-between px-4 h-[60px] border-b">
+          <h2 id="mobile-menu-heading" class="font-bold text-blue-700 text-lg">Menu</h2>
+          <button id="mobile-menu-close" class="p-2 hover:bg-gray-100 rounded" aria-label="Close mobile menu" type="button">
+            <span class="sr-only">Close</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="p-4 border-b">
+          <a href="#" class="shimmer-button block text-center py-3 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-600 transition-colors">Join Our Community</a>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdDTtZQwnmf7OfzdmGwcNXMHEb8JCOLl__I-UL6H1-d8aAEyA/viewform?usp=sharing&ouid=105351415346587374700" class="block px-4 py-2 hover:bg-gray-100 transition-colors">
+            Startup Registration
+          </a>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfc9f0Lcxcv3cirTZBhzupM0rs1z-o_5UcHKMA2WFHuu9NVLg/viewform?usp=publish-editor" class="block px-4 py-2 hover:bg-gray-100 transition-colors">
+            Join as Mentor
+          </a>
+        </div>
+        <nav class="p-2" role="navigation" aria-label="Mobile">
+          <div class="mb-3">
+            <div class="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider">About</div>
+            <ul class="space-y-1">
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="about.html">About III</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="governing-council.html">Governing Council</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="advisory.html">Advisory Board</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="team.html">Team</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="recognition.html">Recognition</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="partners.html">Our Partners</a></li>
+            </ul>
+          </div>
+
+          <div class="mb-3">
+            <div class="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Programs</div>
+            <ul class="space-y-1">
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="incubation-program.html">Incubation Programs</a></li>
+            </ul>
+          </div>
+          
+          
+          <div class="mb-3">
+            <div class="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Scheme</div>
+            <ul class="space-y-1">
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="funding.html">Funding</a></li>
+            </ul>
+          </div>
+
+          <div class="mb-3">
+            <div class="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Events</div>
+            <ul class="space-y-1">
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="photos.html">Photos</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="videos.html">Videos</a></li>
+            </ul>
+          </div>
+
+          <div class="mb-6">
+            <div class="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Impact</div>
+            <ul class="space-y-1">
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="patents.html">Patents Filed</a></li>
+              <li><a class="block px-4 py-2 hover:bg-gray-100 rounded transition-colors" href="success.html">Success Stories</a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="hidden lg:flex nav-items list-none gap-6 xl:gap-10 mr-4 lg:mr-[70px] font-bold text-blue-400 text-sm lg:text-base xl:text-lg">
+      <!-- About Dropdown -->
+      <div class="group relative">
+        <button class="inline-flex items-center gap-1 p-2 text-blue-500 font-bold hover:text-blue-600 transition-colors duration-200" aria-haspopup="true">
+          About
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+        </button>
+        <div role="menu" class="absolute left-0 top-full translate-y-2 opacity-0 invisible pointer-events-none transition-all duration-200 bg-white rounded-md shadow-xl ring-1 ring-black/5 min-w-[240px] z-50 py-2 flex flex-col divide-y divide-gray-100
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+          <a role="menuitem" href="about.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">About III</a>
+          <a role="menuitem" href="governing-council.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Governing Council</a>
+          <a role="menuitem" href="advisory.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Advisory Board Team</a>
+          <a role="menuitem" href="team.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Team</a>
+          <a role="menuitem" href="recognition.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Recognition</a>
+          <a role="menuitem" href="partners.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Our Partners</a>
+        </div>
+      </div>
+
+      <!-- Programs -->
+      <div class="group relative">
+        <button class="inline-flex items-center gap-1 p-2 text-blue-500 font-bold hover:text-blue-600 transition-colors duration-200" aria-haspopup="true">
+          Programs
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+        </button>
+        <div role="menu" class="absolute left-0 top-full translate-y-2 opacity-0 invisible pointer-events-none transition-all duration-200 bg-white rounded-md shadow-xl ring-1 ring-black/5 min-w-[240px] z-50 py-2 flex flex-col divide-y divide-gray-100
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+          <a role="menuitem" href="incubation-program.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Incubation Programs</a>
+        </div>
+      </div>
+
+      <!-- Scheme -->
+      <div class="group relative">
+        <button class="inline-flex items-center gap-1 p-2 text-blue-500 font-bold hover:text-blue-600 transition-colors duration-200" aria-haspopup="true">
+          Scheme
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+        </button>
+        <div role="menu" class="absolute left-0 top-full translate-y-2 opacity-0 invisible pointer-events-none transition-all duration-200 bg-white rounded-md shadow-xl ring-1 ring-black/5 min-w-[240px] z-50 py-2 flex flex-col divide-y divide-gray-100
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+          <a role="menuitem" href="funding.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Funding</a>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="group relative">
+        <button class="inline-flex items-center gap-1 p-2 text-blue-500 font-bold hover:text-blue-600 transition-colors duration-200" aria-haspopup="true">
+          Events
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+        </button>
+        <div role="menu" class="absolute left-0 top-full translate-y-2 opacity-0 invisible pointer-events-none transition-all duration-200 bg-white rounded-md shadow-xl ring-1 ring-black/5 min-w-[240px] z-50 py-2 flex flex-col divide-y divide-gray-100
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+          <a role="menuitem" href="photos.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Photos</a>
+          <a role="menuitem" href="videos.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Videos</a>
+        </div>
+      </div>
+
+      <!-- Impact -->
+      <div class="group relative">
+        <button class="inline-flex items-center gap-1 p-2 text-blue-500 font-bold hover:text-blue-600 transition-colors duration-200" aria-haspopup="true">
+          Impact
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+        </button>
+        <div role="menu" class="absolute left-0 top-full translate-y-2 opacity-0 invisible pointer-events-none transition-all duration-200 bg-white rounded-md shadow-xl ring-1 ring-black/5 min-w-[240px] z-50 py-2 flex flex-col divide-y divide-gray-100
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+          <a role="menuitem" href="patents.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Patents Filed</a>
+          <a role="menuitem" href="success.html" class="px-4 py-2 hover:text-blue-600 hover:bg-gray-50 focus:bg-blue-50 focus:text-blue-600 focus:outline-none transition-colors">Success Stories</a>
+        </div>
+      </div>
+
+      <!-- Join Community -->
+      <div class="group relative">
+        <button type="button" aria-haspopup="true" class="inline-flex items-center gap-1 px-3 lg:px-6 py-2 lg:py-3 bg-blue-500 rounded-full text-white font-bold hover:bg-blue-600 transition-colors duration-200 text-sm lg:text-base">
+          Join Our Community
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+        </button>
+        <div role="menu" class="absolute left-1/2 -translate-x-1/2 top-full translate-y-2 opacity-0 invisible pointer-events-none transition-all duration-200 w-56 bg-white rounded-md shadow-xl ring-1 ring-black/5 z-50 py-2 flex flex-col divide-y divide-gray-100
+                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+          <a role="menuitem" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdDTtZQwnmf7OfzdmGwcNXMHEb8JCOLl__I-UL6H1-d8aAEyA/viewform?usp=sharing&ouid=105351415346587374700" class="block px-4 py-2 hover:bg-gray-50 focus:bg-blue-50 focus:outline-none transition-colors">Startup Registration</a>
+          <a role="menuitem" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfc9f0Lcxcv3cirTZBhzupM0rs1z-o_5UcHKMA2WFHuu9NVLg/viewform?usp=publish-editor" class="block px-4 py-2 hover:bg-gray-50 focus:bg-blue-50 focus:outline-none transition-colors">Join as Mentor</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= RESPONSIVE HERO SECTION ================= -->
+  <div class="hero relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="hero-video-container absolute inset-0 w-full h-full">
+      <video src="assets/Incvid.mp4" autoplay loop muted class="hero-video w-full h-full object-cover"></video>
+    </div>
+    <div class="hero-overlay relative z-10 text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-6xl mx-auto">
+      <h1 class="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 sm:mb-4">
+        <span class="block">Invertis Innovation &</span>
+        <span class="block">Incubation</span>
+      </h1>
+      <h3 class="hero-subtitle text-sm sm:text-base md:text-lg lg:text-xl text-orange-400 font-semibold max-w-4xl mx-auto">
+        This is the home for the thriving community of Invertis' Innovators & Entrepreneurs.
+      </h3>
+    </div>
+  </div>
+
+  <!-- ================= RESPONSIVE DESCRIPTION SECTION ================= -->
+  <div class="description-section py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8">
+    <!-- Heading Card -->
+    <div class="description-heading mx-auto mb-8 sm:mb-12 md:mb-16" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
+      <h1 class="description-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mr-2 sm:mr-4">Introducing</h1>
+      <img class="description-logo h-8 sm:h-10 md:h-12 lg:h-16 w-auto object-contain" src="assets/incub-logo.png" alt="Invertis Logo">
+    </div>
+    
+    <!-- Content Row -->
+    <div class="description-content max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
+        <!-- Text Column -->
+        <div class="description-text order-2 lg:order-1" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="600">
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-medium">
+            <strong>
+            III is not merely a building; it is the vibrant core of the innovation and entrepreneurship (I&E)
+            community at Invertis. This space represents the result of years of meticulous planning,
+            extensive reconstruction, and national community-building. Situated in the heart of
+            Invertis University Bareilly, known as "the most innovative place in the state," III fosters
+            opportunities for transformative impact, not just at Invertis, but across the Indian innovation
+            ecosystem and beyond.
+            </strong>
+          </p>
+        </div>
+        
+        <!-- Image Column -->
+        <div class="description-image order-1 lg:order-2 flex justify-center" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="600">
+          <img src="assets/descrip_img.jpg" alt="Description Image" class="w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= RESPONSIVE TESTIMONIALS ================= -->
+  <!-- First Testimonial -->
+  <div class="testimonial-container py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
+    <div class="testimonial-card max-w-7xl mx-auto" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image -->
+        <div class="testimonial-image order-1 lg:order-1" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="600">
+          <img src="assets/ChancellorSir.jpg" alt="Hon'ble Chancellor Sir" class="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover" />
+        </div>
+
+        <!-- Text -->
+        <div class="testimonial-text order-2 lg:order-2 p-4 sm:p-6 md:p-8 lg:p-12" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="600">
+          <h2 class="testimonial-title text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
+            By Hon'ble Chancellor Sir
+          </h2>
+          <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
+            At Invertis Innovation and Incubation,
+            <span class="highlight text-blue-600 font-semibold">we are nurturing innovation</span>
+            to empower the next generation of entrepreneurs.
+            Our mission is to provide essential resources, mentorship,
+            and <span class="highlight text-blue-600 font-semibold">a vibrant ecosystem that transforms ideas</span>
+            into impactful businesses on both local and global scales.
+            Our commitment is to support aspiring entrepreneurs every step of the way,
+            <span class="highlight text-blue-600 font-semibold">ensuring they have the tools and guidance needed</span>
+            to succeed in today's competitive landscape.
+            <span class="highlight text-blue-600 font-semibold">Join us on this journey to unlock the potential</span>
+            of innovation and bring their visionary ideas to life.
+          </p>
+          <div class="testimonial-name text-right text-base sm:text-lg font-bold text-gray-700">Dr. Umesh Gautam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Testimonial -->
+  <div class="testimonial py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
+  <div class="testimonial-card max-w-7xl mx-auto" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="testimonial-image order-1" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="600">
+          <img src="assets/Governing/parth_sir4.jpg" alt="Executive Director" class="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover">
+        </div>
+        <div class="testimonial-text order-2 p-4 sm:p-6 md:p-8 lg:p-12" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="600">
+          <h2 class="testimonial-title text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
+            By Executive Director
+          </h2>
+          <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
+            Invertis Innovation and Incubation is our commitment 
+            <span class="highlight text-blue-600 font-semibold">to create a dynamic space where creativity meets opportunity</span>. 
+            Our mission is to cultivate a culture of entrepreneurship, 
+            guiding start-ups through every stage, 
+            <span class="highlight text-blue-600 font-semibold">from initial concept to successful execution</span>. 
+            By offering world-class support, III helps innovators turn their vision into reality, 
+            <span class="highlight text-blue-600 font-semibold">contributing to sustainable development and economic growth</span>.
+          </p>
+          <div class="testimonial-name text-right text-base sm:text-lg font-bold text-gray-700">Mr. Parth Gautam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Third Testimonial -->
+  <div class="testimonial py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
+  <div class="testimonial-card max-w-7xl mx-auto" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="testimonial-image order-1" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="600">
+          <img src="assets/Governing/talhaSirOffice.jpg" alt="Director Industry Partnerships" class="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover">
+        </div>
+        <div class="testimonial-text order-2 p-4 sm:p-6 md:p-8 lg:p-12" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="600">
+          <h2 class="testimonial-title text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
+            By Director Industry Partnerships
+          </h2>
+          <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
+            Invertis Innovation and Incubation embodies our vision 
+            <span class="highlight text-blue-600 font-semibold">of a vivacious platform where entrepreneurial spirit embellishes</span>. 
+            Through collaboration, mentorship, and 
+            <span class="highlight text-blue-600 font-semibold">access to critical resources</span>, 
+            we empower students and startups to overcome challenges and achieve success. 
+            <span class="highlight text-blue-600 font-semibold">Together, we will build ventures that create meaningful impact</span> 
+            and enhance our innovation ecosystem.
+          </p>
+          <div class="testimonial-name text-right text-base sm:text-lg font-bold text-gray-700">Mohd Talha Khan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= RESPONSIVE PARTNERS SECTION ================= -->
+  <section class="partners-section py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="partners-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4">OUR PARTNERS</h2>
+      <div class="partners-underline w-24 sm:w-32 md:w-40 h-1 bg-blue-600 mx-auto mb-8 sm:mb-12"></div>
+      <div class="partners-marquee overflow-hidden">
+        <div class="partners-track flex gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
+          <img src="assets/PatnerImage/microsoft.png" alt="Microsoft Partner" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/ibm.png" alt="IBM" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/adobe.png" alt="Adobe" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/ansys.png" alt="Ansys" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/dassault.png" alt="Dassault" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/nidm.jpeg" alt="NIDM" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/dcs.png" alt="DCS" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/vaave.png" alt="Vaave" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/jards.jpeg" alt="Jards" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/mastercam.png" alt="Mastercam" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/linkedin.png" alt="LinkedIn" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/ptc.png" alt="PTC" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/yif.png" alt="YIF" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <!-- Duplicate logos for infinite loop -->
+          <img src="assets/PatnerImage/microsoft.png" alt="Microsoft Partner" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/ibm.png" alt="IBM" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+          <img src="assets/PatnerImage/adobe.png" alt="Adobe" class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain flex-shrink-0">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESPONSIVE THRUST AREAS CARD ================= -->
+  <div class="card-big py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl">
+        <!-- Image -->
+        <div class="card-big-image order-2 lg:order-1" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="600">
+          <img src="assets/area.jpg" alt="Thrust Area" class="w-full max-w-md lg:max-w-lg mx-auto rounded-lg shadow-lg">
+        </div>
+        <!-- Text -->
+        <div class="card-big-text order-1 lg:order-2 text-center lg:text-left" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="600">
+          <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6">III | Thrust Areas</h1>
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed">
+            The thrust area of incubation at our center focuses on nurturing innovative startups in
+            key domains such as technology, healthcare, sustainability, and social impact. We provide
+            comprehensive support through mentorship, funding, and resources to help early-stage ventures
+            grow and succeed in a dynamic market.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= RESPONSIVE SERVICES SECTION ================= -->
+  <section class="services-section py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6" data-aos="fade-down" data-aos-duration="600">
+        OUR SERVICES
+      </h1>
+      <div class="services-underline w-24 sm:w-32 md:w-40 h-1 bg-blue-600 mx-auto mb-8 sm:mb-12" data-aos="fade-down" data-aos-delay="200" data-aos-duration="600"></div>
+      <div class="services-image-container" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
+        <img src="assets/SEVICESSS.png" alt="Our Services" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
+      </div>
+    </div>
+  </section>
+<!-- Grid Section -->
+    <div class="grid-container" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="600">
+        <div class="grid-item">
+            <div class="icon">📁</div>
+            <h3>STRUCTURED MENTORING PROGRAM</h3>
+            <p>Mentoring significantly boosts a company's chances of success. We grasp the journey and provide guidance tailored to each step.</p>
+        </div>
+        <div class="grid-item alt">
+            <div class="icon">🎯</div>
+            <h3>EMPHASIS ON STUDENT STARTUPS</h3>
+            <p>The idea is to encourage innovation and creativity — there is no time and age to build an idea, so you can start early.</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon">🏭</div>
+            <h3>EMPHASIS ON INDUSTRY NETWORK</h3>
+            <p>The aim is to cultivate ongoing and lasting collaboration between major corporations and cutting-edge technology ventures.</p>
+        </div>
+        <div class="grid-item alt">
+            <div class="icon">💸</div>
+            <h3>SEED FUNDING SUPPORT</h3>
+            <p>The incubator offers seed funding to assist startups in developing their business ideas, creating prototypes, conducting market research, and covering initial expenses.</p>
+        </div>
+        <div class="grid-item">
+            <div class="icon">📍</div>
+            <h3>SUBSIDIZED INCUBATION SPACE</h3>
+            <p>We support your startup's creation, development, and design by offering office space where you and your team can collaborate and work together as a unified group.</p>
+        </div>
+        <div class="grid-item alt">
+            <div class="icon">🚀</div>
+            <h3>TARGETED ACCELERATION PROGRAM</h3>
+            <p>We nurture the growth and development of entrepreneurial talent in youth. Our acceleration program provides young startups with the tools and skills they need to succeed.</p>
+        </div>
+    </div>
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init();
+    </script>
+  <!-- ================= RESPONSIVE STUDENTS SECTION ================= -->
+  <section class="students-section py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="students-image-container text-center mb-8 sm:mb-12" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">
+        <img src="assets/students.png" alt="Students" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
+      </div>
+      <div class="students-divider-container" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="600">
+        <div class="students-divider w-full max-w-4xl mx-auto h-1 bg-blue-600"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESPONSIVE FOOTER ================= -->
+  
+  <!-- Footer -->
+ 
+  <!-- Desktop Footer -->
+  <div class="footer-container desktop-footer">
+    
+    <!-- Left Logo + Contact -->
+    <div class="footer-logo">
+      <img src="/assets/incub-logo.png" alt="Logo">
+      <div class="footer-contact-icons">
+        <div class="icon-circle yellow"><i class="fa fa-phone"></i></div>
+  <p>+91 72170 11240</p>
+        <div class="icon-circle yellow"><i class="fa fa-envelope"></i></div>
+        <p>invertis.incubation@invertis.org</p>
+      </div>
+    </div>
+
+    <!-- Middle Contact -->
+    <div class="footer-contact">
+      <h2>Contact Us</h2>
+      <p><strong>Campus</strong> Invertis Village, Delhi Lucknow Highway NH-24, Bareilly, Uttar Pradesh Pin - 243 123, India</p>
+      <p><strong>City Office</strong> B-186, Civil Lines, Opposite Bareilly GPO, Bareilly, Uttar Pradesh, Pin - 243 001, India</p>
+    </div>
+
+    <!-- Right About -->
+    <div class="footer-about">
+      <h2>This Website</h2>
+      <p>III is Powered By</p>
+      <img src="/assets/main logo.png" alt="Powered Logo" class="powered-logo">
+      <h2>Handles</h2>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/invertisincubation" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://x.com/InvertisUni" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61565390027580" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://chat.whatsapp.com/GEWqTxZ7l2GDFSy61heHub" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Footer -->
+  <div class="footer-container mobile-footer">
+    <img src="/assets/incub-logo.png" alt="Logo" class="mobile-logo">
+
+    <div class="footer-contact-icons mobile-icons">
+      <div class="icon-circle yellow"><i class="fa fa-phone"></i></div>
+  <p>+91 72170 11240</p>
+      <div class="icon-circle yellow"><i class="fa fa-envelope"></i></div>
+      <p>invertis.incubation@invertis.org</p>
+    </div>
+
+    <div class="footer-contact mobile-contact">
+      <h2>Contact Us</h2>
+      <p><strong>Campus</strong> Invertis Village, Delhi Lucknow Highway NH-24, Bareilly, Uttar Pradesh Pin - 243 123, India</p>
+      <p><strong>City Office</strong> B-186, Civil Lines, Opposite Bareilly GPO, Bareilly, Uttar Pradesh, Pin - 243 001, India</p>
+    </div>
+
+    <h2 class="mobile-handles-title">Handles</h2>
+    <div class="footer-social mobile-social">
+      <a href="https://www.instagram.com/invertisincubation" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://x.com/InvertisUni" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61565390027580" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://chat.whatsapp.com/GEWqTxZ7l2GDFSy61heHub" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <!-- ================= SCRIPTS ================= -->
+  <!-- AOS Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const menuClose = document.getElementById('mobile-menu-close');
+      const sidebar = document.getElementById('mobile-sidebar');
+      const overlay = document.getElementById('mobile-overlay');
+
+      function openSidebar() {
+        sidebar.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        menuButton.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeSidebar() {
+        sidebar.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
+
+      menuButton.addEventListener('click', openSidebar);
+      menuClose.addEventListener('click', closeSidebar);
+      overlay.addEventListener('click', closeSidebar);
+
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSidebar();
+      });
+
+      // Close on window resize to desktop
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) {
+          closeSidebar();
+        }
+      });
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
