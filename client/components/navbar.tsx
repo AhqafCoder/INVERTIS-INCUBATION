@@ -48,10 +48,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
-            <div className="relative h-12 w-24 sm:h-14 sm:w-28">
+            <div className="relative h-10 w-20 sm:h-12 sm:w-24">
               <Image
                 src="/assets/incub-logo.png"
                 alt="Invertis Innovation & Incubation"
@@ -211,7 +211,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t bg-white shadow-lg">
-          <div className="container mx-auto px-4 py-6 space-y-5 max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="container mx-auto px-4 py-6 space-y-5 max-h-[calc(100vh-64px)] overflow-y-auto">
             {/* About Section */}
             <div>
               <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-2">About</h3>

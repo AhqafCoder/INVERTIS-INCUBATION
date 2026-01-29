@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="h-[calc(100vh-80px)] flex flex-col items-center justify-center relative overflow-hidden">
+    <section className="h-[calc(100vh-50px)] flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/assets/bg.jpg"
@@ -69,7 +69,7 @@ export function Hero() {
           <Link href="/incubation-program" className="w-full sm:w-auto">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto group relative text-sm sm:text-base font-medium bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 h-10 sm:h-12 px-6 sm:px-10 rounded-lg shadow-lg"
+              className="w-full sm:w-auto group relative text-sm sm:text-base font-medium bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 h-10 sm:h-11 px-6 sm:px-8 rounded-lg shadow-lg"
             >
               <span className="relative z-10 flex items-center justify-center">
                 Explore Programs
@@ -86,7 +86,7 @@ export function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="w-full sm:w-auto text-sm sm:text-base font-medium bg-white hover:bg-gray-50 text-gray-900 transition-all duration-300 h-10 sm:h-12 px-6 sm:px-10 rounded-lg border-2 border-white shadow-lg"
+              className="w-full sm:w-auto text-sm sm:text-base font-medium bg-white hover:bg-gray-50 text-gray-900 transition-all duration-300 h-10 sm:h-11 px-6 sm:px-8 rounded-lg border-2 border-white shadow-lg"
             >
               Join Community
               <Users className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
