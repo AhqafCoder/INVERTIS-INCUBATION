@@ -32,6 +32,7 @@ export default function IncubationProgramPage() {
                     src={program.image}
                     alt={program.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                   <Badge className="absolute top-4 right-4 bg-blue-600">

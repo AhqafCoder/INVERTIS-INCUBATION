@@ -14,6 +14,7 @@ export function ThrustAreasSection() {
                 src="/assets/area.jpg"
                 alt="Thrust Areas"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

@@ -36,6 +36,7 @@ export default function RecognitionPage() {
                     src={recognition.logo}
                     alt="StartinUP"
                     fill
+                    sizes="256px"
                     className="object-contain"
                   />
                 </div>

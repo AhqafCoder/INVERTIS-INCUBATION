@@ -14,9 +14,9 @@ export function Hero() {
           src="/assets/bg.jpg"
           alt="Invertis Innovation & Incubation Background"
           fill
-          className="object-cover object-center"
-          priority
           sizes="100vw"
+          className="object-cover object-center "
+          priority
         />
       </div>
 

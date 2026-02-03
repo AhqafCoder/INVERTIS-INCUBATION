@@ -34,6 +34,7 @@ export default function PartnersPage() {
                     src={partner.logo}
                     alt={partner.name}
                     fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 128px"
                     className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   />
                 </div>
@@ -60,6 +61,7 @@ export default function PartnersPage() {
                     src={startup.logo}
                     alt={startup.name}
                     fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 16vw, 96px"
                     className="object-contain"
                   />
                 </div>
@@ -88,6 +90,7 @@ export default function PartnersPage() {
                         src={partner.logo}
                         alt={partner.name}
                         fill
+                        sizes="256px"
                         className="object-contain"
                       />
                     </div>
@@ -111,6 +114,7 @@ export default function PartnersPage() {
                         src={partner.logo}
                         alt={partner.name}
                         fill
+                        sizes="256px"
                         className="object-contain"
                       />
                     </div>

@@ -24,6 +24,7 @@ export function Footer() {
                     src="/assets/incub-logo.png"
                     alt="Invertis Incubation Logo"
                     fill
+                    sizes="128px"
                     className="object-contain"
                     priority
                   />
@@ -219,8 +220,7 @@ export function Footer() {
                   <Image
                     src="/assets/main logo.png"
                     alt="Powered By Logo"
-                    fill
-                    className="object-contain"
+                    fill                    sizes="(max-width: 768px) 150px, 200px"                    className="object-contain"
                   />
                 </div>
               </div>
