@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AnnouncementBar } from "@/components/announcement-bar";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased font-sans`}>
+        <AnnouncementBar />
         <Navbar />
         {children}
         <Footer />

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export function IntroductionSection() {
   return (
-    <section className="h-screen w-full">
+    <section className="min-h-screen md:h-screen w-full">
       <div className="grid md:grid-cols-2 gap-0 items-stretch h-full">
         {/* Left Side - Image */}
         <motion.div 
@@ -28,7 +28,7 @@ export function IntroductionSection() {
 
         {/* Right Side - Text Content */}
         <motion.div 
-          className="space-y-6 p-8 md:p-12 bg-white flex flex-col justify-center"
+          className="space-y-6 p-6 pt-8 md:p-12 bg-white flex flex-col justify-center"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
