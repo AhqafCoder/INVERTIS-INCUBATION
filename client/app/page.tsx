@@ -1,5 +1,7 @@
 import { Hero } from "@/components/hero";
 import { IntroductionSection } from "@/components/sections/introduction";
+import { ImpactStatsSection } from "@/components/sections/impact-stats";
+import { FundingIncentivesSection } from "@/components/sections/funding-incentives";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { PartnersSection } from "@/components/sections/partners";
 import { ThrustAreasSection } from "@/components/sections/thrust-areas";
@@ -10,6 +12,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <IntroductionSection />
+      <ImpactStatsSection />
+      <FundingIncentivesSection />
       <TestimonialsSection />
       <PartnersSection />
       <ThrustAreasSection />
