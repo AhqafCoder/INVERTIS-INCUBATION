@@ -26,13 +26,13 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
+        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center"
       >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-6 sm:mb-8 flex justify-center"
+          className="mb-4 sm:mb-6 flex justify-center"
         >
           <div className="relative rounded-full px-3 py-1 text-xs sm:text-sm leading-6 text-white/90 ring-1 ring-white/30 hover:ring-white/40 backdrop-blur-sm">
             Empowering Innovation & Entrepreneurship{" "}
@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mx-auto text-center mt-4 sm:mt-6 relative z-20 py-4 text-white"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mx-auto text-center mt-2 sm:mt-4 relative z-20 py-2 sm:py-3 text-white"
         >
           <span className="text-blue-500">I</span>nvertis <span className="text-yellow-400">I</span>nnovation and <span className="text-red-500">I</span>ncubation
         </motion.h1>
@@ -55,7 +55,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-4 sm:mt-6 mb-6 sm:mb-10 text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed px-4"
+          className="mt-3 sm:mt-4 mb-5 sm:mb-8 text-sm sm:text-base md:text-lg text-white/90 max-w-xl lg:max-w-3xl mx-auto leading-relaxed px-0"
         >
           The Home for the Thriving Community of Invertis&apos; Innovators & Entrepreneurs
         </motion.p>
@@ -64,7 +64,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 px-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
         >
           <Link href="/incubation-program" className="w-full sm:w-auto">
             <Button 

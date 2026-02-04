@@ -183,7 +183,7 @@ export function Navbar() {
               >
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col h-full bg-gradient-to-b from-white via-gray-50 to-gray-100">
-                  <nav className="flex-1 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6">
+                  <nav className="flex-1 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6 mt-8">
                     <div className="space-y-3">
                       {Object.entries(navLinks).slice(0, 5).map(([key, links], sectionIndex) => (
                         <div 
