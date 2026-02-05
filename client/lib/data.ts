@@ -44,61 +44,81 @@ Unlike accelerators that focus on speeding up growth for existing start-ups, inc
   image: "/assets/About_image.jpg"
 };
 
-export const governingCouncil = [
-  {
-    name: "Dr. Umesh Gautam",
-    title: "Chancellor",
-    image: "/assets/ChancellorSir.jpg",
-    description: "Hon'ble Chancellor Sir"
-  },
-  {
-    name: "Mr. Parth Gautam",
-    title: "Executive Director",
-    image: "/assets/Governing/parth_sir4.jpg",
-    description: "Leads strategic initiatives for the incubation center"
-  },
-  {
-    name: "Mohd Talha Khan",
-    title: "Director Industry Partnerships",
-    image: "/assets/Governing/talhaSirOffice.jpg",
-    description: "Manages industry collaborations and partnerships"
-  },
-  {
-    name: "Prof. P. P. Singh",
-    title: "Pro Vice-Chancellor",
-    image: "/assets/Governing/ppsingh.jpg"
-  },
-  {
-    name: "Dr. J. N. Singh",
-    title: "Registrar",
-    image: "/assets/Governing/jns.jpg"
-  },
-  {
-    name: "Prof. Reena Agrawal",
-    title: "Dean Academics",
-    image: "/assets/Governing/reena.jpg"
-  },
-  {
-    name: "Dr. Satya Prakash Tripathi",
-    title: "Dean Students Welfare",
-    image: "/assets/Governing/sstripathi.jpg"
-  },
-  {
-    name: "Dr. Manish Kumar Mishra",
-    title: "Director Research & Development",
-    image: "/assets/Governing/manishSir.jpg"
-  },
-  {
-    name: "Dr. Ashutosh Dwivedi",
-    title: "Dean Engineering",
-    image: "/assets/Governing/Austosh_sir.jpg"
-  },
-  {
-    name: "Dr. Jitendra Kushwaha",
-    title: "Director Admissions",
-    image: "/assets/Governing/jitendra_prashari.jpg"
-  }
-];
+export const governingCouncil = {
+  leadership: [
+    {
+      name: "Mr. Parth Gautam",
+      title: "Chairman",
+      role: "leadership",
+      image: "/assets/Governing/parth_sir4.jpg",
+      description: "Leads strategic initiatives for the incubation center"
+    },
+    {
+      name: "Mohd Talha Khan",
+      title: "Vice Chairman",
+      role: "leadership",
+      image: "/assets/Governing/talhaSirOffice.jpg",
+      description: "Manages industry collaborations and partnerships"
+    },
+    {
+      name: "Pankaj Rai",
+      title: "President of IIC",
+      role: "leadership",
+      image: "/assets/Governing/manishSir.jpg",
+      description: "Oversees Innovation and Incubation Council activities"
+    }
+  ],
+  executiveMembers: [
+    {
+      name: "Dr. R.K. Shukla",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/shuklaSir.jpg"
+    },
+    {
+      name: "Dr. Manish Gupta",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/manishSir.jpg"
+    },
+    {
+      name: "Dr. P. P. Singh",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/ppsingh.jpg"
+    },
+    {
+      name: "Dr. S.S. Tripathi",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/sstripathi.jpg"
+    },
+    {
+      name: "Prof. Reena Jaiswal",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/reena.jpg"
+    },
+    {
+      name: "Prof. (Dr.) Raju Ch. V. Voleti",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/ppsingh.jpg"
+    },
+    {
+      name: "Mr. Jitendra Parashari",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/jitendra_prashari.jpg"
+    },
+    {
+      name: "Mr. Ashutosh Pradhan",
+      title: "Member Secretary",
+      role: "executive",
+      image: "/assets/Governing/pradhanSir.jpg"
+    }
+  ]
+};
 
 export const advisoryBoard = [
   {
