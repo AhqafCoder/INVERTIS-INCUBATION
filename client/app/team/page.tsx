@@ -1,91 +1,270 @@
+"use client";
+
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { team } from "@/lib/data";
+import { motion } from "framer-motion";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function TeamPage() {
-  const coreTeam = team.filter(member => member.category === "core");
-  const studentTeam = team.filter(member => member.category === "student");
+  const coreTeam = [
+    {
+      name: "Dr. Rajeev Singh Bhandari",
+      title: "Incubation Manager",
+      image: "/assets/Team/BhandariSir.jpeg"
+    },
+    {
+      name: "Mr. Aman Choudhary",
+      title: "Incubation Associate",
+      image: "/assets/Team/amansir.jpeg"
+    }
+  ];
+
+  const incubationSquad = {
+    tech: [
+      {
+        name: "Alok Yadav",
+        image: "/assets/Team Students/Alok.jpeg"
+      },
+      {
+        name: "Ahqaf Ali",
+        image: "/assets/Team Students/Ahqaf.jpeg"
+      }
+    ],
+    media: [
+      {
+        name: "Aqsa Ahmad",
+        image: "/assets/Team Students/aqsa.jpeg"
+      },
+      {
+        name: "Mr. Pranay Saxena",
+        image: "/assets/Team Students/Pranay.jpeg"
+      }
+    ],
+    event: [
+      {
+        name: "Krishnamani Sharma",
+        image: "/assets/Team Students/Krishna.jpeg"
+      },
+      {
+        name: "Alaina Khan",
+        image: "/assets/Team Students/alaina.jpeg"
+      }
+    ],
+    archive: [
+      {
+        name: "Alaina Khan",
+        image: "/assets/Team Students/alaina.jpeg"
+      },
+      {
+        name: "Mr. Pranay Saxena",
+        image: "/assets/Team Students/Pranay.jpeg"
+      }
+    ]
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0.0, 0.2, 1] as const
+      },
+    },
+  };
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Team
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Dedicated professionals driving innovation forward
-          </p>
-        </div>
-      </section>
-
-      {/* Core Team */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Core Team
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {coreTeam.map((member, index) => (
-              <Card 
-                key={index}
-                className="overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    <HeroHighlight containerClassName="min-h-screen w-full !h-auto">
+      <div className="min-h-screen bg-gradient-to-b from-white/80 via-blue-50/20 to-white/80 px-8 sm:px-12 lg:px-16 xl:px-20 relative z-10">
+        {/* Core Team Section */}
+        <section className="pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="container mx-auto max-w-7xl">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Side - Typography */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="relative h-80">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
+                <div className="text-left">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight">TEAM</h2>
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
+                    We've got an <Highlight className="text-gray-900 px-2">entire dedicated team</Highlight> to supporting you and{" "}
+                    <span className="inline-flex items-baseline whitespace-nowrap gap-1">
+                      your<PointerHighlight><span className="text-gray-900"> startup</span></PointerHighlight>
+                    </span>.
+                  </h1>
                 </div>
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 font-medium">
-                    {member.title}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+              </motion.div>
 
-          {/* Student Associates */}
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Student Associates
-          </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-            {studentTeam.map((member, index) => (
-              <Card 
-                key={index}
-                className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              {/* Right Side - Core Team Cards */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="relative h-48">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 16vw"
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="p-4 text-center">
-                  <h3 className="text-sm font-bold text-gray-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <Badge variant="secondary" className="text-xs">
-                    {member.title}
-                  </Badge>
-                </CardContent>
-              </Card>
-            ))}
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                >
+                  {coreTeam.map((member, index) => (
+                    <motion.div key={index} variants={itemVariants}>
+                      <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg h-full bg-white">
+                        {/* Image */}
+                        <div className="relative h-64 sm:h-72 overflow-hidden">
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 50vw"
+                            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          />
+                        </div>
+
+                        {/* Content */}
+                        <CardContent className="p-4 text-center">
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">
+                            {member.name}
+                          </h3>
+                          <p className="text-sm font-medium text-blue-600">
+                            {member.title}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Incubation Squad Section */}
+        <section className="pb-12 md:pb-16">
+          <div className="container mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-2 tracking-tight">
+                INCUBATION SQUAD
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {/* Tech Associates */}
+              {incubationSquad.tech.map((member, index) => (
+                <motion.div key={`tech-${index}`} variants={itemVariants}>
+                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
+                    <div className="relative h-56 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-4 text-center">
+                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
+                      <p className="text-xs font-medium text-blue-600">Tech Associate</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+
+              {/* Media Associates */}
+              {incubationSquad.media.map((member, index) => (
+                <motion.div key={`media-${index}`} variants={itemVariants}>
+                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
+                    <div className="relative h-56 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-4 text-center">
+                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
+                      <p className="text-xs font-medium text-blue-600">Media Associate</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+
+              {/* Event Associates */}
+              {incubationSquad.event.map((member, index) => (
+                <motion.div key={`event-${index}`} variants={itemVariants}>
+                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
+                    <div className="relative h-56 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-4 text-center">
+                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
+                      <p className="text-xs font-medium text-blue-600">Event Associate</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+
+              {/* Archive Associates */}
+              {incubationSquad.archive.map((member, index) => (
+                <motion.div key={`archive-${index}`} variants={itemVariants}>
+                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
+                    <div className="relative h-56 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-4 text-center">
+                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
+                      <p className="text-xs font-medium text-blue-600">Archive Associate</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </HeroHighlight>
   );
 }

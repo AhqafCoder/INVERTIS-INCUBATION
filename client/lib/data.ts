@@ -155,57 +155,45 @@ export const advisoryBoard = [
 
 export const team = [
   {
-    name: "Dr. Purnima Sharma",
-    title: "CEO, Invertis Innovation & Incubation",
-    image: "/assets/Team/purnimaMam.jpg",
-    category: "core"
-  },
-  {
-    name: "Dr. Prashant Bhandari",
-    title: "Manager, Innovation & Incubation",
+    name: "Dr. Rajeev Singh Bhandari",
+    title: "Incubation Manager",
     image: "/assets/Team/BhandariSir.jpeg",
     category: "core"
   },
   {
-    name: "Ms. Archana Awasthi",
-    title: "Executive, Innovation & Incubation",
-    image: "/assets/Team/Archana.jpeg",
+    name: "Mr. Aman Choudhary",
+    title: "Incubation Associate",
+    image: "/assets/Team/Aman.jpeg",
     category: "core"
   },
   {
-    name: "Ahqaf Ali",
-    title: "Student Associate",
-    image: "/assets/Team Students/Ahqaf.jpeg",
+    name: "Mr. Pranay Saxena",
+    title: "Incubation Student Convenor",
+    image: "/assets/Team Students/Pranay.jpeg",
     category: "student"
   },
   {
-    name: "Alaina Saifi",
-    title: "Student Associate",
-    image: "/assets/Team Students/alaina.jpeg",
-    category: "student"
-  },
-  {
-    name: "Alok Yadav",
-    title: "Student Associate",
-    image: "/assets/Team Students/Alok.jpeg",
-    category: "student"
-  },
-  {
-    name: "Aman Singh",
-    title: "Student Associate",
-    image: "/assets/Team Students/amansir.jpeg",
-    category: "student"
-  },
-  {
-    name: "Aqsa Tabassum",
-    title: "Student Associate",
+    name: "Aqsa Ahmad",
+    title: "Incubation Media Associate",
     image: "/assets/Team Students/aqsa.jpeg",
     category: "student"
   },
   {
-    name: "Krish Rawat",
-    title: "Student Associate",
-    image: "/assets/Team Students/krish.jpeg",
+    name: "Alok Yadav",
+    title: "Incubation Tech Associate",
+    image: "/assets/Team Students/Alok.jpeg",
+    category: "student"
+  },
+  {
+    name: "Ahqaf Ali",
+    title: "Incubation Tech Associate",
+    image: "/assets/Team Students/Ahqaf.jpeg",
+    category: "student"
+  },
+  {
+    name: "Alaina Khan",
+    title: "Incubation Archive Associate",
+    image: "/assets/Team Students/alaina.jpeg",
     category: "student"
   }
 ];
