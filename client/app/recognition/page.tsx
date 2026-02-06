@@ -1,51 +1,53 @@
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { recognition } from "@/lib/data";
-import { Award, Download, ExternalLink } from "lucide-react";
+import { Download } from "lucide-react";
 
 export default function RecognitionPage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <Award className="h-16 w-16 mx-auto mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Recognition & Achievements
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Acknowledgments and accolades from government and industry bodies
-          </p>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/30 to-white">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tight">
+              RECOGNITION
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+              Official recognition from government authorities
+            </p>
+          </div>
 
-      {/* StartinUP Recognition */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="overflow-hidden shadow-xl border-2 border-blue-200">
-            <CardHeader className="bg-blue-50">
-              <CardTitle className="text-3xl text-center text-blue-900">
-                {recognition.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <div className="flex flex-col items-center space-y-6">
-                <div className="relative h-48 w-64">
+          {/* StartinUP Recognition Card */}
+          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200">
+            <div className="p-8 md:p-12 lg:p-16">
+              <div className="flex flex-col items-center space-y-8">
+                {/* Logo */}
+                <div className="relative h-56 w-72 md:h-64 md:w-80">
                   <Image
                     src={recognition.logo}
                     alt="StartinUP"
                     fill
-                    sizes="256px"
+                    sizes="(max-width: 768px) 288px, 320px"
                     className="object-contain"
+                    priority
                   />
                 </div>
-                <p className="text-lg text-gray-700 text-center leading-relaxed">
+
+                {/* Title */}
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
+                  {recognition.title}
+                </h2>
+
+                {/* Description */}
+                <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl">
                   {recognition.description}
                 </p>
+
+                {/* Certificate Button */}
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                   asChild
                 >
                   <a 
@@ -59,56 +61,10 @@ export default function RecognitionPage() {
                   </a>
                 </Button>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Additional Recognition */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Other Achievements
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-4">🏆</div>
-                <CardTitle>MSME Registered</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Recognized and registered under the Ministry of Micro, Small & Medium Enterprises
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-4">🎯</div>
-                <CardTitle>DPIIT Recognized</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Acknowledged by Department for Promotion of Industry and Internal Trade
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-4">⭐</div>
-                <CardTitle>NAAC A+ Accredited</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Part of NAAC A+ accredited Invertis University ecosystem
-                </p>
-              </CardContent>
-            </Card>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
