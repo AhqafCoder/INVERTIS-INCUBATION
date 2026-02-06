@@ -24,41 +24,41 @@ export default function TeamPage() {
     tech: [
       {
         name: "Alok Yadav",
-        image: "/assets/Team Students/Alok.jpeg"
+        image: "/assets/Team/Alok.jpeg"
       },
       {
         name: "Ahqaf Ali",
-        image: "/assets/Team Students/Ahqaf.jpeg"
+        image: "/assets/Team/Ahqaf.jpeg"
       }
     ],
     media: [
       {
         name: "Aqsa Ahmad",
-        image: "/assets/Team Students/aqsa.jpeg"
+        image: "/assets/Team/aqsa.jpeg"
       },
       {
-        name: "Mr. Pranay Saxena",
-        image: "/assets/Team Students/Pranay.jpeg"
+        name: "NA",
+        image: "/assets/Team/Pranay.jpeg"
       }
     ],
     event: [
       {
         name: "Krishnamani Sharma",
-        image: "/assets/Team Students/Krishna.jpeg"
+        image: "/assets/Team/krish.jpeg"
       },
       {
-        name: "Alaina Khan",
-        image: "/assets/Team Students/alaina.jpeg"
+        name: "NA",
+        image: "/assets/Team/aaina.jpeg"
       }
     ],
     archive: [
       {
         name: "Alaina Khan",
-        image: "/assets/Team Students/alaina.jpeg"
+        image: "/assets/Team/alaina.jpeg"
       },
       {
-        name: "Mr. Pranay Saxena",
-        image: "/assets/Team Students/Pranay.jpeg"
+        name: "Pranay Saxena",
+        image: "/assets/Team/praney.jpeg"
       }
     ]
   };
@@ -180,85 +180,69 @@ export default function TeamPage() {
             >
               {/* Tech Associates */}
               {incubationSquad.tech.map((member, index) => (
-                <motion.div key={`tech-${index}`} variants={itemVariants}>
-                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
-                    <div className="relative h-56 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <CardContent className="p-4 text-center">
-                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
-                      <p className="text-xs font-medium text-blue-600">Tech Associate</p>
-                    </CardContent>
-                  </Card>
+                <motion.div key={`tech-${index}`} variants={itemVariants} className="flex flex-col items-center">
+                  <div className="group relative w-40 h-40 mb-4 overflow-hidden rounded-full border-4 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-xl">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="160px"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h4 className="text-base font-bold text-gray-900 mb-1">{member.name}</h4>
+                  <p className="text-sm font-medium text-blue-600">Tech Associate</p>
                 </motion.div>
               ))}
 
               {/* Media Associates */}
               {incubationSquad.media.map((member, index) => (
-                <motion.div key={`media-${index}`} variants={itemVariants}>
-                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
-                    <div className="relative h-56 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <CardContent className="p-4 text-center">
-                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
-                      <p className="text-xs font-medium text-blue-600">Media Associate</p>
-                    </CardContent>
-                  </Card>
+                <motion.div key={`media-${index}`} variants={itemVariants} className="flex flex-col items-center">
+                  <div className="group relative w-40 h-40 mb-4 overflow-hidden rounded-full border-4 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-xl">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="160px"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h4 className="text-base font-bold text-gray-900 mb-1">{member.name}</h4>
+                  <p className="text-sm font-medium text-blue-600">Media Associate</p>
                 </motion.div>
               ))}
 
               {/* Event Associates */}
               {incubationSquad.event.map((member, index) => (
-                <motion.div key={`event-${index}`} variants={itemVariants}>
-                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
-                    <div className="relative h-56 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <CardContent className="p-4 text-center">
-                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
-                      <p className="text-xs font-medium text-blue-600">Event Associate</p>
-                    </CardContent>
-                  </Card>
+                <motion.div key={`event-${index}`} variants={itemVariants} className="flex flex-col items-center">
+                  <div className="group relative w-40 h-40 mb-4 overflow-hidden rounded-full border-4 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-xl">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="160px"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h4 className="text-base font-bold text-gray-900 mb-1">{member.name}</h4>
+                  <p className="text-sm font-medium text-blue-600">Event Associate</p>
                 </motion.div>
               ))}
 
               {/* Archive Associates */}
               {incubationSquad.archive.map((member, index) => (
-                <motion.div key={`archive-${index}`} variants={itemVariants}>
-                  <Card className="group relative overflow-hidden border border-gray-200 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
-                    <div className="relative h-56 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <CardContent className="p-4 text-center">
-                      <h4 className="text-sm font-bold text-gray-900 mb-1">{member.name}</h4>
-                      <p className="text-xs font-medium text-blue-600">Archive Associate</p>
-                    </CardContent>
-                  </Card>
+                <motion.div key={`archive-${index}`} variants={itemVariants} className="flex flex-col items-center">
+                  <div className="group relative w-40 h-40 mb-4 overflow-hidden rounded-full border-4 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-xl">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="160px"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h4 className="text-base font-bold text-gray-900 mb-1">{member.name}</h4>
+                  <p className="text-sm font-medium text-blue-600">Archive Associate</p>
                 </motion.div>
               ))}
             </motion.div>
