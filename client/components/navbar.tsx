@@ -35,9 +35,9 @@ const navLinks: Record<string, NavLink[]> = {
   scheme: [
     { title: "Funding", href: "/funding" },
   ],
-  events: [
-    { title: "Photos", href: "/photos" },
-    { title: "Videos", href: "/videos" },
+  gallery: [
+    { title: "Events Gallery", href: "/gallery" },
+    { title: "Video Gallery", href: "/videos" },
   ],
   impact: [
     { title: "Patents Filed", href: "/patents" },
