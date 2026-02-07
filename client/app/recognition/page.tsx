@@ -1,53 +1,103 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { recognition } from "@/lib/data";
 import { Download } from "lucide-react";
+import { motion } from "framer-motion";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function RecognitionPage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0.0, 0.2, 1] as const
+      },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/30 to-white">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tight">
-              RECOGNITION
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-              Official recognition from government authorities
-            </p>
-          </div>
+    <HeroHighlight containerClassName="min-h-screen w-full !h-auto">
+      <div className="min-h-screen bg-gradient-to-b from-white/80 via-blue-50/20 to-white/80 px-8 sm:px-12 lg:px-16 xl:px-20 relative z-10">
+        <div className="container mx-auto max-w-7xl py-12 md:py-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Side - Header */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight">
+                RECOGNITION
+              </h1>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-snug">
+                We are <Highlight className="text-gray-900 px-2">officially recognized</Highlight> by{" "}
+                <span className="inline-flex items-baseline whitespace-nowrap gap-1">
+                  government<PointerHighlight><span className="text-gray-900"> authorities</span></PointerHighlight>
+                </span>.
+              </h2>
+            </motion.div>
 
-          {/* StartinUP Recognition Card */}
-          <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200">
-            <div className="p-8 md:p-12 lg:p-16">
-              <div className="flex flex-col items-center space-y-8">
-                {/* Logo */}
-                <div className="relative h-56 w-72 md:h-64 md:w-80">
-                  <Image
-                    src={recognition.logo}
-                    alt="StartinUP"
-                    fill
-                    sizes="(max-width: 768px) 288px, 320px"
-                    className="object-contain"
-                    priority
-                  />
-                </div>
+            {/* Right Side - Logo and Content */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-6 md:space-y-8"
+            >
+              {/* Logo */}
+              <motion.div 
+                variants={itemVariants}
+                className="relative h-40 w-64 sm:h-48 sm:w-80 md:h-56 md:w-96"
+              >
+                <Image
+                  src={recognition.logo}
+                  alt="StartinUP"
+                  fill
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                  className="object-contain object-left"
+                  priority
+                />
+              </motion.div>
 
-                {/* Title */}
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
-                  {recognition.title}
-                </h2>
+              {/* Title */}
+              <motion.h3 
+                variants={itemVariants}
+                className="text-2xl md:text-3xl font-bold text-gray-900"
+              >
+                {recognition.title}
+              </motion.h3>
 
-                {/* Description */}
-                <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl">
-                  {recognition.description}
-                </p>
+              {/* Description */}
+              <motion.p 
+                variants={itemVariants}
+                className="text-base md:text-lg text-gray-700 leading-relaxed"
+              >
+                {recognition.description}
+              </motion.p>
 
-                {/* Certificate Button */}
+              {/* Certificate Button */}
+              <motion.div variants={itemVariants} className="pt-2">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-5 text-base font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                   asChild
                 >
                   <a 
@@ -60,11 +110,11 @@ export default function RecognitionPage() {
                     View Certificate
                   </a>
                 </Button>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </HeroHighlight>
   );
 }
