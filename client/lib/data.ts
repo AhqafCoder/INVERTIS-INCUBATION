@@ -316,29 +316,52 @@ export const incubatedStartups = [
 
 export const successStories = [
   {
-    company: "Composite Innovation Pvt Ltd",
-    description: "Developing advanced composite materials for industrial applications. Successfully raised ₹50 lakhs in seed funding.",
-    achievements: ["Seed Funding Secured", "Patent Filed", "Market Entry"]
+    company: "Aqin Biotech Pvt. Ltd.",
+    description: "Aqin Biotech Pvt. Ltd. achieved a key milestone by receiving Seed Capital and Market Assistance (1st Tranche) of ₹3.5 lakhs. This support enabled the company to strengthen its market presence, enhance operational readiness, and accelerate early-stage growth.",
+    category: "Biotechnology",
+    image: "/assets/startups/Aqin.png",
+    funding: "₹3.5 Lakhs",
+    achievements: ["Seed Capital Received", "Market Assistance", "Operational Growth"]
   },
   {
-    company: "Heuk Care Pvt Ltd",
-    description: "Healthcare tech startup providing innovative medical solutions. Serving 10,000+ patients.",
-    achievements: ["10K+ Users", "Hospital Partnerships", "Award Winner"]
+    company: "Cladbe Platforms LLP",
+    description: "Cladbe Platforms LLP successfully received a Sustenance Allowance (1st Tranche) of ₹52,000, supporting the continuity of its early-stage operations. This assistance helped maintain operational stability and stay focused on product development.",
+    category: "SaaS Platform",
+    image: "/assets/startups/cladbe.jpg",
+    funding: "₹52,000",
+    achievements: ["Sustenance Allowance", "Product Development", "Operational Stability"]
   },
   {
-    company: "Kenshu Transcend",
-    description: "Training and consulting solutions for corporate sector. Trained 5,000+ professionals.",
-    achievements: ["5K+ Trained", "Corporate Clients", "Pan India Presence"]
+    company: "SS Parts Planet Pvt. Ltd.",
+    description: "SS Parts Planet Pvt. Ltd. successfully secured Seed Capital and Market Assistance (1st Tranche) of ₹3 lakhs, marking an important milestone in its growth journey. This support improved operational capabilities and accelerated business expansion.",
+    category: "Automotive",
+    image: "/assets/startups/SS PARTS LOGO.jpg",
+    funding: "₹3 Lakhs",
+    achievements: ["Seed Capital Secured", "Business Expansion", "Market Presence"]
   },
   {
-    company: "Nextinera Technologies",
-    description: "AI-powered solutions for businesses. Recognized as emerging tech startup.",
-    achievements: ["AI Innovation", "Tech Awards", "Growing Revenue"]
+    company: "Atheravia Pvt. Ltd.",
+    description: "Atheravia Pvt. Ltd., a skincare brand, achieved an important growth milestone by securing an investment of ₹2.5 lakhs. This funding supported product development, branding, and market expansion initiatives in the competitive skincare market.",
+    category: "Skincare",
+    image: "/assets/startups/HEUK CARE PRIVATE LIMITED.png",
+    funding: "₹2.5 Lakhs",
+    achievements: ["Investment Secured", "Product Development", "Market Expansion"]
   },
   {
     company: "NearBix",
-    description: "Location-based services platform connecting local businesses with customers.",
-    achievements: ["50+ Business Partners", "Mobile App Launch", "User Growth"]
+    description: "NearBix is a location-based services platform connecting local businesses with customers. The platform provides instant replies to local finds, revolutionizing how people discover and engage with nearby services.",
+    category: "Technology",
+    image: "/assets/startups/NearBix.png",
+    funding: "Growing",
+    achievements: ["Location Services", "Business Connect", "Instant Replies"]
+  },
+  {
+    company: "Edusphere",
+    description: "Edusphere has revolutionized educational technology by providing innovative learning solutions and has successfully expanded its reach to multiple educational institutions.",
+    category: "EdTech",
+    image: "/assets/startups/edusphere.png",
+    funding: "Growing",
+    achievements: ["EdTech Innovation", "Institutional Partnerships", "Learning Solutions"]
   }
 ];
 
