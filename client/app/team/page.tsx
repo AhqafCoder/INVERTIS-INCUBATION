@@ -21,6 +21,17 @@ export default function TeamPage() {
   ];
 
   const incubationSquad = {
+    
+    archive: [
+      {
+        name: "Alaina Khan",
+        image: "/assets/Team/alaina.jpeg"
+      },
+      {
+        name: "Pranay Saxena",
+        image: "/assets/Team/praney.jpeg"
+      }
+    ],
     tech: [
       {
         name: "Alok Yadav",
@@ -49,16 +60,6 @@ export default function TeamPage() {
       {
         name: "NA",
         image: "/assets/Team/aaina.jpeg"
-      }
-    ],
-    archive: [
-      {
-        name: "Alaina Khan",
-        image: "/assets/Team/alaina.jpeg"
-      },
-      {
-        name: "Pranay Saxena",
-        image: "/assets/Team/praney.jpeg"
       }
     ]
   };
@@ -195,6 +196,23 @@ export default function TeamPage() {
                 </motion.div>
               ))}
 
+              {/* Archive Associates */}
+              {incubationSquad.archive.map((member, index) => (
+                <motion.div key={`archive-${index}`} variants={itemVariants} className="flex flex-col items-center">
+                  <div className="group relative w-40 h-40 mb-4 overflow-hidden rounded-full border-4 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-xl">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="160px"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h4 className="text-base font-bold text-gray-900 mb-1">{member.name}</h4>
+                  <p className="text-sm font-medium text-blue-600">Archive Associate</p>
+                </motion.div>
+              ))}
+
               {/* Media Associates */}
               {incubationSquad.media.map((member, index) => (
                 <motion.div key={`media-${index}`} variants={itemVariants} className="flex flex-col items-center">
@@ -229,22 +247,7 @@ export default function TeamPage() {
                 </motion.div>
               ))}
 
-              {/* Archive Associates */}
-              {incubationSquad.archive.map((member, index) => (
-                <motion.div key={`archive-${index}`} variants={itemVariants} className="flex flex-col items-center">
-                  <div className="group relative w-40 h-40 mb-4 overflow-hidden rounded-full border-4 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-xl">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      sizes="160px"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <h4 className="text-base font-bold text-gray-900 mb-1">{member.name}</h4>
-                  <p className="text-sm font-medium text-blue-600">Archive Associate</p>
-                </motion.div>
-              ))}
+              
             </motion.div>
           </div>
         </section>

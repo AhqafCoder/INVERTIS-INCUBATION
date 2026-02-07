@@ -43,6 +43,13 @@ const navLinks: Record<string, NavLink[]> = {
     { title: "Patents Filed", href: "/patents" },
     { title: "Success Stories", href: "/success" },
   ],
+  achievements: [
+    { title: "Our Achievements", href: "/achievements" },
+  ],
+  more: [
+    { title: "Contact Us", href: "/contact" },
+    { title: "Report a Bug", href: "/report-bug" },
+  ],
   community: [
     { 
       title: "Startup Registration", 
@@ -101,7 +108,7 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
-              {Object.entries(navLinks).slice(0, 5).map(([key, links]) => (
+              {Object.entries(navLinks).filter(([key]) => key !== 'community').map(([key, links]) => (
                 <div key={key} className="group relative">
                   <button className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-600 rounded-lg hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 transition-all duration-300">
                     {key.charAt(0).toUpperCase() + key.slice(1)}
@@ -185,7 +192,7 @@ export function Navbar() {
                 <div className="flex flex-col h-full bg-gradient-to-b from-white via-gray-50 to-gray-100">
                   <nav className="flex-1 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6 mt-8">
                     <div className="space-y-3">
-                      {Object.entries(navLinks).slice(0, 5).map(([key, links], sectionIndex) => (
+                      {Object.entries(navLinks).filter(([key]) => key !== 'community').map(([key, links], sectionIndex) => (
                         <div 
                           key={key} 
                           className="space-y-2 animate-slideInRight"
