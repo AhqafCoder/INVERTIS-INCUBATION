@@ -44,61 +44,81 @@ Unlike accelerators that focus on speeding up growth for existing start-ups, inc
   image: "/assets/About_image.jpg"
 };
 
-export const governingCouncil = [
-  {
-    name: "Dr. Umesh Gautam",
-    title: "Chancellor",
-    image: "/assets/ChancellorSir.jpg",
-    description: "Hon'ble Chancellor Sir"
-  },
-  {
-    name: "Mr. Parth Gautam",
-    title: "Executive Director",
-    image: "/assets/Governing/parth_sir4.jpg",
-    description: "Leads strategic initiatives for the incubation center"
-  },
-  {
-    name: "Mohd Talha Khan",
-    title: "Director Industry Partnerships",
-    image: "/assets/Governing/talhaSirOffice.jpg",
-    description: "Manages industry collaborations and partnerships"
-  },
-  {
-    name: "Prof. P. P. Singh",
-    title: "Pro Vice-Chancellor",
-    image: "/assets/Governing/ppsingh.jpg"
-  },
-  {
-    name: "Dr. J. N. Singh",
-    title: "Registrar",
-    image: "/assets/Governing/jns.jpg"
-  },
-  {
-    name: "Prof. Reena Agrawal",
-    title: "Dean Academics",
-    image: "/assets/Governing/reena.jpg"
-  },
-  {
-    name: "Dr. Satya Prakash Tripathi",
-    title: "Dean Students Welfare",
-    image: "/assets/Governing/sstripathi.jpg"
-  },
-  {
-    name: "Dr. Manish Kumar Mishra",
-    title: "Director Research & Development",
-    image: "/assets/Governing/manishSir.jpg"
-  },
-  {
-    name: "Dr. Ashutosh Dwivedi",
-    title: "Dean Engineering",
-    image: "/assets/Governing/Austosh_sir.jpg"
-  },
-  {
-    name: "Dr. Jitendra Kushwaha",
-    title: "Director Admissions",
-    image: "/assets/Governing/jitendra_prashari.jpg"
-  }
-];
+export const governingCouncil = {
+  leadership: [
+    {
+      name: "Mr. Parth Gautam",
+      title: "Chairman",
+      role: "leadership",
+      image: "/assets/Governing/parth_sir4.jpg",
+      description: "Leads strategic initiatives for the incubation center"
+    },
+    {
+      name: "Mohd Talha Khan",
+      title: "Vice Chairman",
+      role: "leadership",
+      image: "/assets/Governing/talhaSirOffice.jpg",
+      description: "Manages industry collaborations and partnerships"
+    },
+    {
+      name: "Pankaj Rai",
+      title: "President of IIC",
+      role: "leadership",
+      image: "/assets/Governing/manishSir.jpg",
+      description: "Oversees Innovation and Incubation Council activities"
+    }
+  ],
+  executiveMembers: [
+    {
+      name: "Dr. R.K. Shukla",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/shuklaSir.jpg"
+    },
+    {
+      name: "Dr. Manish Gupta",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/manishSir.jpg"
+    },
+    {
+      name: "Dr. P. P. Singh",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/ppsingh.jpg"
+    },
+    {
+      name: "Dr. S.S. Tripathi",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/sstripathi.jpg"
+    },
+    {
+      name: "Prof. Reena Jaiswal",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/reena.jpg"
+    },
+    {
+      name: "Prof. (Dr.) Raju Ch. V. Voleti",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/ppsingh.jpg"
+    },
+    {
+      name: "Mr. Jitendra Parashari",
+      title: "Executive Member",
+      role: "executive",
+      image: "/assets/Governing/jitendra_prashari.jpg"
+    },
+    {
+      name: "Mr. Ashutosh Pradhan",
+      title: "Member Secretary",
+      role: "executive",
+      image: "/assets/Governing/pradhanSir.jpg"
+    }
+  ]
+};
 
 export const advisoryBoard = [
   {
@@ -135,57 +155,45 @@ export const advisoryBoard = [
 
 export const team = [
   {
-    name: "Dr. Purnima Sharma",
-    title: "CEO, Invertis Innovation & Incubation",
-    image: "/assets/Team/purnimaMam.jpg",
-    category: "core"
-  },
-  {
-    name: "Dr. Prashant Bhandari",
-    title: "Manager, Innovation & Incubation",
+    name: "Dr. Rajeev Singh Bhandari",
+    title: "Incubation Manager",
     image: "/assets/Team/BhandariSir.jpeg",
     category: "core"
   },
   {
-    name: "Ms. Archana Awasthi",
-    title: "Executive, Innovation & Incubation",
-    image: "/assets/Team/Archana.jpeg",
+    name: "Mr. Aman Choudhary",
+    title: "Incubation Associate",
+    image: "/assets/Team/Aman.jpeg",
     category: "core"
   },
   {
-    name: "Ahqaf Ali",
-    title: "Student Associate",
-    image: "/assets/Team Students/Ahqaf.jpeg",
+    name: "Mr. Pranay Saxena",
+    title: "Incubation Student Convenor",
+    image: "/assets/Team Students/Pranay.jpeg",
     category: "student"
   },
   {
-    name: "Alaina Saifi",
-    title: "Student Associate",
-    image: "/assets/Team Students/alaina.jpeg",
-    category: "student"
-  },
-  {
-    name: "Alok Yadav",
-    title: "Student Associate",
-    image: "/assets/Team Students/Alok.jpeg",
-    category: "student"
-  },
-  {
-    name: "Aman Singh",
-    title: "Student Associate",
-    image: "/assets/Team Students/amansir.jpeg",
-    category: "student"
-  },
-  {
-    name: "Aqsa Tabassum",
-    title: "Student Associate",
+    name: "Aqsa Ahmad",
+    title: "Incubation Media Associate",
     image: "/assets/Team Students/aqsa.jpeg",
     category: "student"
   },
   {
-    name: "Krish Rawat",
-    title: "Student Associate",
-    image: "/assets/Team Students/krish.jpeg",
+    name: "Alok Yadav",
+    title: "Incubation Tech Associate",
+    image: "/assets/Team Students/Alok.jpeg",
+    category: "student"
+  },
+  {
+    name: "Ahqaf Ali",
+    title: "Incubation Tech Associate",
+    image: "/assets/Team Students/Ahqaf.jpeg",
+    category: "student"
+  },
+  {
+    name: "Alaina Khan",
+    title: "Incubation Archive Associate",
+    image: "/assets/Team Students/alaina.jpeg",
     category: "student"
   }
 ];
@@ -271,46 +279,74 @@ export const incubationPrograms = [
 
 export const partners = {
   knowledge: [
-    { name: "IBM", logo: "/assets/PatnerImage/ibm.png" },
-    { name: "Microsoft", logo: "/assets/PatnerImage/microsoft.png" },
-    { name: "Adobe", logo: "/assets/PatnerImage/adobe.png" },
-    { name: "LinkedIn", logo: "/assets/PatnerImage/linkedin.png" },
-    { name: "ANSYS", logo: "/assets/PatnerImage/ansys.png" },
-    { name: "Dassault Systèmes", logo: "/assets/PatnerImage/dassault.png" },
-    { name: "PTC", logo: "/assets/PatnerImage/ptc.png" },
-    { name: "Mastercam", logo: "/assets/PatnerImage/mastercam.png" },
-    { name: "Vaave", logo: "/assets/PatnerImage/vaave.png" },
-    { name: "NIDM", logo: "/assets/PatnerImage/nidm.jpeg" },
-    { name: "YIF", logo: "/assets/PatnerImage/yif.png" },
-    { name: "JARDS", logo: "/assets/PatnerImage/jards.jpeg" },
-    { name: "Eduskill", logo: "/assets/PatnerImage/eduskill.jpg" }
+    { name: "LinkedIn", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
+    { name: "UltraTech Cement", logo: "https://th.bing.com/th/id/OIP.SqQrQq4T2JRS9eTBddBNxQHaEN?rs=1&pid=ImgDetMain" },
+    { name: "JARDS", logo: "https://jards.in/wp-content/uploads/2021/05/JARDS-LOGO3-1-1024x412.png" },
+    { name: "Business Standard", logo: "https://www.themediaant.com/blog/wp-content/uploads/2021/09/business-standard-logo.png" },
+    { name: "Institute of Company Secretaries of India", logo: "https://media.glassdoor.com/sqll/526672/the-institute-of-company-secretaries-of-india-squarelogo-1475064988847.png" },
+    { name: "CESIM", logo: "https://www.cesim.com/hs-fs/hubfs/cesimlogo.png?width=462&name=cesimlogo.png" },
+    { name: "Vaave", logo: "https://www.vaave.com/media/logo-black.png" },
+    { name: "Shape my skills by Ducat", logo: "https://th.bing.com/th/id/OIP.shbieuaKaovD31MOtMmORAHaDt?rs=1&pid=ImgDetMain" },
+    { name: "NIDM (National Institute of Disaster Management)", logo: "https://th.bing.com/th?id=OIP.eCr8UbHQzlES3GfJvDZJ4gHaDm&w=349&h=169&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Infosys Springboard", logo: "https://th.bing.com/th?id=OIP.u9H0rrSvh_1M2QzisiaOYQAAAA&w=191&h=117&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Livingstone College, USA", logo: "https://th.bing.com/th?id=OIP.Z1MpELZqJavwf-dJrAnPtgAAAA&w=186&h=183&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Energy Swaraj Foundation", logo: "https://th.bing.com/th?id=OIP.5kAJ6reYEdDBdoeqxDkORgHaG4&w=259&h=240&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Istanbul Gedik University, Turkiye", logo: "https://th.bing.com/th?id=OIP.KTN7emixJSDb1yR8uJMAvgAAAA&w=159&h=159&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Istanbul Gelisim University, Turkiye", logo: "https://th.bing.com/th?id=OIP.e4oLtMlznaVhO68skyouXwHaHa&w=249&h=250&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Istanbul Medipol University, Turkey", logo: "https://th.bing.com/th/id/OIP.4mQCmiBrLyxGMngU78TW7QHaCP?w=280&h=105&c=7&r=0&o=5&dpr=1.5&pid=1.7" },
+    { name: "Istanbul University, Turkiye", logo: "https://th.bing.com/th/id/OIP.vPsx87aqyWQt3v_kBgC9XAHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" },
+    { name: "UP Council of Sugarcane Research", logo: "https://th.bing.com/th/id/OIP.pzqDDNbQAaBiPiWLgSCkiwAAAA?rs=1&pid=ImgDetMain" },
+    { name: "Virtual Lab nodal centre, IIT Roorkee", logo: "https://th.bing.com/th/id/OIP.1Pm6DtRMxUdt0-o88GXvoQAAAA?w=293&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" }
   ],
   certification: [
-    { name: "Microsoft Partner", logo: "/assets/PatnerImage/microsoft_patner.jpeg" }
+    { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+    { name: "Adobe", logo: "https://th.bing.com/th?id=OIP.10iTkgrDM76aXqCxm2HhfwHaEK&w=333&h=187&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.5&pid=3.1&rm=2" },
+    { name: "Microsoft", logo: "/assets/PatnerImage/microsoft.png" },
+    { name: "EduSkills", logo: "/assets/PatnerImage/eduskill.jpg" },
+    { name: "Google Developer", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+    { name: "Shape my skills", logo: "https://th.bing.com/th/id/OIP.shbieuaKaovD31MOtMmORAHaDt?rs=1&pid=ImgDetMain" },
+    { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+    { name: "Juniper", logo: "/assets/PatnerImage/Juniper_Networks_logo.png" },
+    { name: "Zscaler", logo: "/assets/PatnerImage/zscaler.png" },
+    { name: "Mindas", logo: "/assets/PatnerImage/midas.png" }
   ],
   technology: [
-    { name: "DCS", logo: "/assets/PatnerImage/dcs.png" }
+    { name: "PTC", logo: "/assets/PatnerImage/ptc.png" },
+    { name: "Dassault Systèmes", logo: "/assets/PatnerImage/dassault.png" },
+    { name: "Mastercam", logo: "/assets/PatnerImage/mastercam.png" },
+    { name: "Ansys", logo: "/assets/PatnerImage/ansys.png" },
+    { name: "Intel", logo: "/assets/PatnerImage/Intellogo.png" },
+    { name: "HP", logo: "/assets/PatnerImage/hplogo.png" },
+    { name: "Adobe", logo: "/assets/PatnerImage/adobe.png" },
+    { name: "IBM", logo: "/assets/PatnerImage/ibm.png" },
+    { name: "LinkedIn", logo: "/assets/PatnerImage/linkedin.png" }
   ]
 };
 
 export const incubatedStartups = [
-  { name: "Aqin", logo: "/assets/startups/Aqin.png" },
-  { name: "Clothi ngVibe", logo: "/assets/startups/clothingvibe.png" },
+  { name: "Physis Living Private Limited", logo: "/assets/startups/PHYSIS LIVING PRIVATE LIMITED.jpeg" },
+  { name: "Eco Char LLP", logo: "/assets/startups/ecochar.jpg" },
+  { name: "Kalpit Infotech", logo: "/assets/startups/kalpit.jpg" },
+  { name: "Fovty Private Limited", logo: "/assets/startups/fovty.jpg" },
+  { name: "SS Parts Planet Private Limited", logo: "/assets/startups/SS PARTS LOGO.jpg" },
+  { name: "Composite Innovations Private Limited", logo: "/assets/startups/COMPOPSITE INNOVATION PRIVATE LIMITED.jpg" },
+  { name: "Ucyber Digital Innovations Pvt Ltd", logo: "/assets/startups/ucyber.jpg" },
+  { name: "Aqin Biotech Pvt Ltd", logo: "/assets/startups/Aqin.png" },
+  { name: "Cladbe Platforms LLP", logo: "/assets/startups/cladbe.jpg" },
+  { name: "Clothing Vibe", logo: "/assets/startups/clothingvibe.png" },
+  { name: "Kolega Creations India Pvt. Ltd.", logo: "/assets/startups/KOLEGA CREATIONS INDIA PVT. LTD.jpg" },
+  { name: "Heuk Care Private Limited", logo: "/assets/startups/HEUK CARE PRIVATE LIMITED.png" },
+  { name: "Nextinera Technologies Private Limited", logo: "/assets/startups/NEXTINERA TECHNOLOGIES PRIVATE LIMITED.png" },
+  { name: "SGSC Spiritual Tours Private Limited", logo: "/assets/startups/SGSC Spiritual Tours Private Limited ,DarshanNiti.png" },
+  { name: "Parom Manufacturers Private Limited", logo: "/assets/startups/PAROM MANUFRACTURERS PRIVATE LIMITED.png" },
+  { name: "Oddiant Techlabs LLP", logo: "/assets/startups/ODDIANT TECHLABS LLP.png" },
+  { name: "Kenshu Transcend Training & Consulting Solutions LLP", logo: "/assets/startups/KENSHU TRANSCEND TRANING & CONSULTING SOLUTIONS LLP.png" },
+  { name: "Nearbix Trade LLP", logo: "/assets/startups/NearBix.png" },
+  { name: "Wizzymaids Allied Services Private Limited", logo: "/assets/startups/WIZZYMAIDS ALLIED SERVICES PRIVATE LIMITED.jpg" },
+  { name: "Brahmabyte Innovations and Technologies Private Limited", logo: "/assets/startups/brahmabyte.jpeg" },
+  { name: "Edusphere", logo: "/assets/startups/edusphere_logo.png" },
+  { name: "Velaste", logo: "/assets/startups/VELASTE_logo.svg" },
   { name: "Darshan", logo: "/assets/startups/darshan.png" },
-  { name: "Composite Innovation", logo: "/assets/startups/COMPOPSITE INNOVATION PRIVATE LIMITED.jpg" },
-  { name: "EcoChar", logo: "/assets/startups/ecochar.jpg" },
-  { name: "Fovty", logo: "/assets/startups/fovty.jpg" },
-  { name: "Heuk Care", logo: "/assets/startups/HEUK CARE PRIVATE LIMITED.png" },
-  { name: "Kalpit", logo: "/assets/startups/kalpit.jpg" },
-  { name: "Kenshu Transcend", logo: "/assets/startups/KENSHU TRANSCEND TRANING & CONSULTING SOLUTIONS LLP.png" },
-  { name: "Kolega Creations", logo: "/assets/startups/KOLEGA CREATIONS INDIA PVT. LTD.jpg" },
-  { name: "NearBix", logo: "/assets/startups/NearBix.png" },
-  { name: "Nextinera Technologies", logo: "/assets/startups/NEXTINERA TECHNOLOGIES PRIVATE LIMITED.png" },
-  { name: "Octocult", logo: "/assets/startups/octocult logo.jpeg" },
-  { name: "Oddiant Techlabs", logo: "/assets/startups/ODDIANT TECHLABS LLP.png" },
-  { name: "Parom Manufacturers", logo: "/assets/startups/PAROM MANUFRACTURERS PRIVATE LIMITED.png" },
-  { name: "SS Parts", logo: "/assets/startups/SS PARTS LOGO.jpg" },
-  { name: "UCyber", logo: "/assets/startups/ucyber.jpg" },
   { name: "Invitation", logo: "/assets/startups/invitation.png" }
 ];
 

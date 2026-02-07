@@ -17,8 +17,9 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.26.2",
     "lucide-react": "^0.562.0",
-    "motion": "^12.26.2",
-    "next": "16.1.2",
+    "mini-svg-data-uri": "^1.4.4",
+    "motion": "^12.31.0",
+    "next": "^16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.4.0"

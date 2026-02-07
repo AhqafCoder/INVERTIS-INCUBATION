@@ -1,51 +1,103 @@
+"use client";
+
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { recognition } from "@/lib/data";
-import { Award, Download, ExternalLink } from "lucide-react";
+import { Download } from "lucide-react";
+import { motion } from "framer-motion";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function RecognitionPage() {
-  return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <Award className="h-16 w-16 mx-auto mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Recognition & Achievements
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Acknowledgments and accolades from government and industry bodies
-          </p>
-        </div>
-      </section>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-      {/* StartinUP Recognition */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="overflow-hidden shadow-xl border-2 border-blue-200">
-            <CardHeader className="bg-blue-50">
-              <CardTitle className="text-3xl text-center text-blue-900">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0.0, 0.2, 1] as const
+      },
+    },
+  };
+
+  return (
+    <HeroHighlight containerClassName="min-h-screen w-full !h-auto">
+      <div className="min-h-screen bg-gradient-to-b from-white/80 via-blue-50/20 to-white/80 px-8 sm:px-12 lg:px-16 xl:px-20 relative z-10">
+        <div className="container mx-auto max-w-7xl py-12 md:py-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Side - Header */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight">
+                RECOGNITION
+              </h1>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-snug">
+                We are <Highlight className="text-gray-900 px-2">officially recognized</Highlight> by{" "}
+                <span className="inline-flex items-baseline whitespace-nowrap gap-1">
+                  government<PointerHighlight><span className="text-gray-900"> authorities</span></PointerHighlight>
+                </span>.
+              </h2>
+            </motion.div>
+
+            {/* Right Side - Logo and Content */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-6 md:space-y-8"
+            >
+              {/* Logo */}
+              <motion.div 
+                variants={itemVariants}
+                className="relative h-40 w-64 sm:h-48 sm:w-80 md:h-56 md:w-96"
+              >
+                <Image
+                  src={recognition.logo}
+                  alt="StartinUP"
+                  fill
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                  className="object-contain object-left"
+                  priority
+                />
+              </motion.div>
+
+              {/* Title */}
+              <motion.h3 
+                variants={itemVariants}
+                className="text-2xl md:text-3xl font-bold text-gray-900"
+              >
                 {recognition.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <div className="flex flex-col items-center space-y-6">
-                <div className="relative h-48 w-64">
-                  <Image
-                    src={recognition.logo}
-                    alt="StartinUP"
-                    fill
-                    sizes="256px"
-                    className="object-contain"
-                  />
-                </div>
-                <p className="text-lg text-gray-700 text-center leading-relaxed">
-                  {recognition.description}
-                </p>
+              </motion.h3>
+
+              {/* Description */}
+              <motion.p 
+                variants={itemVariants}
+                className="text-base md:text-lg text-gray-700 leading-relaxed"
+              >
+                {recognition.description}
+              </motion.p>
+
+              {/* Certificate Button */}
+              <motion.div variants={itemVariants} className="pt-2">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-5 text-base font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                   asChild
                 >
                   <a 
@@ -58,57 +110,11 @@ export default function RecognitionPage() {
                     View Certificate
                   </a>
                 </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Additional Recognition */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Other Achievements
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-4">🏆</div>
-                <CardTitle>MSME Registered</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Recognized and registered under the Ministry of Micro, Small & Medium Enterprises
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-4">🎯</div>
-                <CardTitle>DPIIT Recognized</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Acknowledged by Department for Promotion of Industry and Internal Trade
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-4">⭐</div>
-                <CardTitle>NAAC A+ Accredited</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Part of NAAC A+ accredited Invertis University ecosystem
-                </p>
-              </CardContent>
-            </Card>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </HeroHighlight>
   );
 }
