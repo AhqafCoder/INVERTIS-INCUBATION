@@ -1,14 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { Calendar, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { galleryData } from "@/data/gallery-data";
+import { galleryService } from "@/lib/services";
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string; index: number; totalImages: number } | null>(null);
+  const [apiGallery, setApiGallery] = useState<any[]>([]);
+
+  // Fetch gallery data from backend
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const images = await galleryService.getAll();
+        setApiGallery(images);
+      } catch (error) {
+        console.log('Using static gallery data only');
+      }
+    };
+    fetchGallery();
+  }, []);
+
+  // Convert API gallery to match static format
+  const apiGalleryFormatted = apiGallery.length > 0 ? [{
+    title: "From Database",
+    date: "Recent Uploads",
+    images: apiGallery.map(img => `http://localhost:5000${img.image}`),
+    category: "API Data"
+  }] : [];
+
+  // Merge static and API gallery data
+  const allGalleryData = [...apiGalleryFormatted, ...galleryData];
 
   const openLightbox = (src: string, title: string, index: number, totalImages: number) => {
     setSelectedImage({ src, title, index, totalImages });
@@ -26,9 +52,9 @@ export default function GalleryPage() {
     let currentImageIndex = 0;
     let foundCurrent = false;
 
-    for (let i = 0; i < galleryData.length; i++) {
-      for (let j = 0; j < galleryData[i].images.length; j++) {
-        if (galleryData[i].images[j] === selectedImage.src) {
+    for (let i = 0; i < allGalleryData.length; i++) {
+      for (let j = 0; j < allGalleryData[i].images.length; j++) {
+        if (allGalleryData[i].images[j] === selectedImage.src) {
           currentEventIndex = i;
           currentImageIndex = j;
           foundCurrent = true;
@@ -39,38 +65,38 @@ export default function GalleryPage() {
     }
 
     if (direction === "next") {
-      if (currentImageIndex < galleryData[currentEventIndex].images.length - 1) {
-        const nextSrc = galleryData[currentEventIndex].images[currentImageIndex + 1];
+      if (currentImageIndex < allGalleryData[currentEventIndex].images.length - 1) {
+        const nextSrc = allGalleryData[currentEventIndex].images[currentImageIndex + 1];
         setSelectedImage({
           src: nextSrc,
-          title: galleryData[currentEventIndex].title,
+          title: allGalleryData[currentEventIndex].title,
           index: currentImageIndex + 2,
-          totalImages: galleryData[currentEventIndex].images.length
+          totalImages: allGalleryData[currentEventIndex].images.length
         });
-      } else if (currentEventIndex < galleryData.length - 1) {
-        const nextSrc = galleryData[currentEventIndex + 1].images[0];
+      } else if (currentEventIndex < allGalleryData.length - 1) {
+        const nextSrc = allGalleryData[currentEventIndex + 1].images[0];
         setSelectedImage({
           src: nextSrc,
-          title: galleryData[currentEventIndex + 1].title,
+          title: allGalleryData[currentEventIndex + 1].title,
           index: 1,
-          totalImages: galleryData[currentEventIndex + 1].images.length
+          totalImages: allGalleryData[currentEventIndex + 1].images.length
         });
       }
     } else {
       if (currentImageIndex > 0) {
-        const prevSrc = galleryData[currentEventIndex].images[currentImageIndex - 1];
+        const prevSrc = allGalleryData[currentEventIndex].images[currentImageIndex - 1];
         setSelectedImage({
           src: prevSrc,
-          title: galleryData[currentEventIndex].title,
+          title: allGalleryData[currentEventIndex].title,
           index: currentImageIndex,
-          totalImages: galleryData[currentEventIndex].images.length
+          totalImages: allGalleryData[currentEventIndex].images.length
         });
       } else if (currentEventIndex > 0) {
-        const prevEventImages = galleryData[currentEventIndex - 1].images;
+        const prevEventImages = allGalleryData[currentEventIndex - 1].images;
         const prevSrc = prevEventImages[prevEventImages.length - 1];
         setSelectedImage({
           src: prevSrc,
-          title: galleryData[currentEventIndex - 1].title,
+          title: allGalleryData[currentEventIndex - 1].title,
           index: prevEventImages.length,
           totalImages: prevEventImages.length
         });
@@ -116,7 +142,7 @@ export default function GalleryPage() {
 
           {/* Gallery Sections */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pb-20">
-            {galleryData.map((event, eventIndex) => (
+            {allGalleryData.map((event, eventIndex) => (
               <motion.div
                 key={eventIndex}
                 initial="hidden"
@@ -141,27 +167,35 @@ export default function GalleryPage() {
                   variants={containerVariants}
                   className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"
                 >
-                  {event.images.map((image, imageIndex) => (
-                    <motion.div
-                      key={imageIndex}
-                      variants={itemVariants}
-                      className="relative aspect-square rounded-lg overflow-hidden cursor-pointer group bg-gray-100"
-                      onClick={() => openLightbox(image, event.title, imageIndex + 1, event.images.length)}
-                    >
-                      <Image
-                        src={`/${image}`}
-                        alt={`${event.title} - Image ${imageIndex + 1}`}
-                        fill
-                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                    </motion.div>
-                  ))}
+                  {event.images.map((image, imageIndex) => {
+                    // Handle both relative paths (static) and absolute URLs (API)
+                    const imageSrc = typeof image === 'string' 
+                      ? (image.startsWith('http') ? image : `/${image}`)
+                      : '/assets/placeholder.jpg';
+                    
+                    return (
+                      <motion.div
+                        key={imageIndex}
+                        variants={itemVariants}
+                        className="relative aspect-square rounded-lg overflow-hidden cursor-pointer group bg-gray-100"
+                        onClick={() => openLightbox(imageSrc, event.title, imageIndex + 1, event.images.length)}
+                      >
+                        <Image
+                          src={imageSrc}
+                          alt={`${event.title} - Image ${imageIndex + 1}`}
+                          fill
+                          sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                          className="object-cover transition-transform duration-300 group-hover:scale-110"
+                          unoptimized={imageSrc.startsWith('http')}
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                      </motion.div>
+                    );
+                  })}
                 </motion.div>
 
                 {/* Divider */}
-                {eventIndex < galleryData.length - 1 && (
+                {eventIndex < allGalleryData.length - 1 && (
                   <div className="mt-12 border-b border-gray-200" />
                 )}
               </motion.div>
@@ -222,12 +256,13 @@ export default function GalleryPage() {
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src={`/${selectedImage.src}`}
+                  src={selectedImage.src}
                   alt={selectedImage.title}
                   fill
                   sizes="100vw"
                   className="object-contain"
                   priority
+                  unoptimized={selectedImage.src.startsWith('http')}
                 />
               </div>
 

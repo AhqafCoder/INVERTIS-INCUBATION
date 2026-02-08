@@ -1,20 +1,27 @@
-# 🚀 Next.js Template with shadcn/ui
+# Invertis Incubation Center - Full Stack Application
 
-A modern, production-ready Next.js template with Tailwind CSS, shadcn/ui components, and TypeScript pre-configured. Perfect for quickly bootstrapping your next project with industry best practices.
+Complete content management system for Invertis Innovation & Incubation Center with Express backend and Next.js frontend.
 
-![Next.js Template](client/public/nextjs.png)
+## 🚀 Features
 
-## ✨ Features
+### Frontend (Next.js)
+- ✅ Modern responsive design with Tailwind CSS
+- ✅ Shadcn UI & Aceternity UI components
+- ✅ Video gallery with modal playback
+- ✅ Events gallery with image showcasing
+- ✅ Team showcase with animations
+- ✅ Incubation programs display
+- ✅ Achievements & patents sections
+- ✅ Contact & bug reporting forms
+- ✅ **Admin Panel** for content management
 
-- ⚡ **Next.js 15** - Latest version with App Router and Turbopack
-- 🎨 **Tailwind CSS 4** - Utility-first CSS framework
-- 🧩 **shadcn/ui** - Beautiful, accessible components built on Radix UI
-- 📱 **Responsive Design** - Mobile-first approach
-- 🔧 **TypeScript** - Full type safety
-- 🎯 **ESLint** - Code linting and formatting
-- 🚀 **Vercel Ready** - Optimized for deployment
-- 🌙 **Dark Mode** - Built-in dark/light theme support
-- 📦 **Component Library** - Pre-built UI components
+### Backend (Express)
+- ✅ RESTful API with Express.js
+- ✅ MongoDB database with Mongoose
+- ✅ JWT authentication for admins
+- ✅ File upload (images, videos, PDFs)
+- ✅ CRUD operations for all content
+- ✅ Security middleware (Helmet, CORS, Rate Limiting)
 
 ## 🛠️ Tech Stack
 

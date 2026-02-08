@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,12 +8,32 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { incubationService, eventService } from "@/lib/services";
 
 export default function IncubationProgramPage() {
   const [activeFilter, setActiveFilter] = useState("All Programs");
   const [showVideo, setShowVideo] = useState(false);
+  const [apiPrograms, setApiPrograms] = useState<any[]>([]);
+  const [apiEvents, setApiEvents] = useState<any[]>([]);
 
-  const programs = [
+  // Fetch data from backend
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [programs, events] = await Promise.all([
+          incubationService.getAll(),
+          eventService.getAll()
+        ]);
+        setApiPrograms(programs);
+        setApiEvents(events);
+      } catch (error) {
+        console.log('Using static data only');
+      }
+    };
+    fetchData();
+  }, []);
+
+  const staticPrograms = [
     {
       title: "Webinar on National Startup Day",
       description: "Theme: Ignite Innovation – Start Local, Scale Global. Expert talk by Rahul Naidu on startup growth and innovation strategies.",
@@ -151,8 +171,36 @@ export default function IncubationProgramPage() {
     }
   ].sort((a, b) => b.sortDate.getTime() - a.sortDate.getTime()); // Sort by date, newest first
 
+  // Convert API programs to match static format
+  const apiProgramsFormatted = apiPrograms.map(p => ({
+    title: p.title,
+    description: p.shortDescription || p.description,
+    date: new Date(p.createdAt).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
+    sortDate: new Date(p.createdAt),
+    category: "Incubation Program",
+    image: p.image ? `http://localhost:5000${p.image}` : "/assets/placeholder.jpg",
+    slug: p.slug
+  }));
+
+  // Convert API events to match static format
+  const apiEventsFormatted = apiEvents.map(e => ({
+    title: e.title,
+    description: e.description,
+    date: new Date(e.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
+    sortDate: new Date(e.date),
+    category: e.category || "Event",
+    image: e.images && e.images.length > 0 ? `http://localhost:5000${e.images[0]}` : "/assets/placeholder.jpg",
+    slug: e._id
+  }));
+
+  // Merge static and API data
+  const programs = [...staticPrograms, ...apiProgramsFormatted, ...apiEventsFormatted]
+    .sort((a, b) => b.sortDate.getTime() - a.sortDate.getTime());
+
   const filters = [
     "All Programs",
+    "Incubation Program",
+    "Event",
     "Shark Tank Invertis",
     "Special Event",
     "Workshop",
@@ -298,6 +346,7 @@ export default function IncubationProgramPage() {
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover hover:scale-105 transition-transform duration-500"
+                        unoptimized={program.image.startsWith('http')}
                       />
                       <div className="absolute top-3 right-3">
                         <Badge className={`${
