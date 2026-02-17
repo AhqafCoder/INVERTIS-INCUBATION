@@ -37,9 +37,9 @@ export function IntroductionSection() {
             {/* Header */}
             <div className="flex items-center gap-3">
               <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent uppercase leading-none">
-                Introducing
+                What is
               </h2>
-              <div className="relative h-10 w-28 md:h-12 md:w-32">
+              <div className="relative h-10 w-10 md:h-12 md:w-12">
                 <Image
                   src="/assets/incub-logo.png"
                   alt="III Logo"
@@ -48,6 +48,8 @@ export function IntroductionSection() {
                   priority
                 />
               </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent uppercase leading-none">
+                ?              </h2>
             </div>
 
             {/* Description */}
