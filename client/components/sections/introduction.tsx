@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 
 export function IntroductionSection() {
   return (
-    <section className="min-h-screen md:h-screen w-full">
-      <div className="grid md:grid-cols-2 gap-0 items-stretch h-full">
+    <section className="w-full">
+      <div className="grid md:grid-cols-2 gap-0 items-stretch">
         {/* Left Side - Image */}
         <motion.div 
-          className="relative h-full"
+          className="relative h-64 sm:h-80 md:h-screen"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -28,18 +28,18 @@ export function IntroductionSection() {
 
         {/* Right Side - Text Content */}
         <motion.div 
-          className="space-y-6 p-6 pt-8 md:p-12 bg-white flex flex-col justify-center"
+          className="space-y-5 md:space-y-6 p-5 sm:p-8 md:p-12 bg-white flex flex-col justify-center"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
             {/* Header */}
-            <div className="flex items-center gap-3">
-              <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent uppercase leading-none">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 uppercase leading-none">
                 What is
               </h2>
-              <div className="relative h-10 w-10 md:h-12 md:w-12">
+              <div className="relative h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12">
                 <Image
                   src="/assets/incub-logo.png"
                   alt="III Logo"
@@ -48,16 +48,17 @@ export function IntroductionSection() {
                   priority
                 />
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent uppercase leading-none">
-                ?              </h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 uppercase leading-none">
+                ?
+              </h2>
             </div>
 
             {/* Description */}
-            <div className="space-y-3">
-              <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+            <div className="space-y-3 md:space-y-4">
+              <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-base font-medium">
                 Invertis Innovation and Incubation (III) is a dynamic hub designed to nurture and accelerate entrepreneurial ventures within the Invertis University ecosystem. It is an independent organisation which provides a platform for budding entrepreneurs, students, and faculty to transform innovative ideas into successful businesses.
               </p>
-              <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+              <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-base font-medium">
                 Incubation is an important activity whose value lies in its ability to help bridge the gap between an idea and the market. III acts as a business incubator that provides fledgling ventures with workspace, seed funding, mentoring, and networking opportunities.
               </p>
             </div>

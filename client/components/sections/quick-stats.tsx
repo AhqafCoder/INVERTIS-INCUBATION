@@ -72,79 +72,39 @@ export function QuickStatsSection() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const iconVariants = {
-    animate: {
-      y: [0, -8, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-      },
-    },
-  };
 
   return (
-    <section className="w-full py-10 md:py-14 bg-gradient-to-b from-white via-gray-50 to-white flex justify-center">
-      <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 max-w-7xl">
+    <section className="w-full py-8 md:py-12 bg-gradient-to-b from-white via-gray-50 to-white flex justify-center">
+      <div className="w-full px-2 sm:px-3 md:px-4 max-w-7xl">
         {/* Stats Grid */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-2 md:gap-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 md:gap-3">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
 
             return (
               <motion.div
                 key={index}
-                variants={itemVariants}
                 whileHover={{
                   y: -8,
                   boxShadow:
                     "0 20px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05)",
                 }}
-                className={`${stat.bgColor} ${stat.border} group rounded-xl p-3 md:p-4 backdrop-blur-xl border transition-all duration-300 cursor-pointer relative overflow-hidden w-full max-w-[120px] md:max-w-[140px]`}
+                className={`${stat.bgColor} ${stat.border} group rounded-xl p-3 md:p-4 backdrop-blur-xl border transition-all duration-300 cursor-pointer relative overflow-hidden w-[calc(50%-0.25rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-0.75rem)] lg:w-[140px]`}
               >
                 {/* Animated Background Gradient */}
                 <div
                   className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${stat.color}`}
                 ></div>
 
-                {/* Icon Container with Animation */}
-                <motion.div
-                  className="mb-3 relative z-10"
-                  animate="animate"
-                  variants={iconVariants}
-                >
+                {/* Icon Container */}
+                <div className="mb-3 relative z-10">
                   <div
                     className={`w-12 h-12 md:w-14 md:h-14 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300`}
                   >
                     <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Stats Content */}
                 <div className="space-y-1 relative z-10">
@@ -165,7 +125,7 @@ export function QuickStatsSection() {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

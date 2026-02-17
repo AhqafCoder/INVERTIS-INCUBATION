@@ -84,7 +84,7 @@ export function FundingIncentivesSection() {
             <span className="text-sm font-semibold text-blue-700">Success Stories</span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 tracking-tight">
-            Startups We've Funded
+            Startups We've Helped Secure Funding
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Empowering innovative ventures with financial support and mentorship to transform ideas into thriving businesses
