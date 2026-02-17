@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin/
+
+Sitemap: https://incubation-ivory.vercel.app/sitemap.xml

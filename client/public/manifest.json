@@ -1,0 +1,31 @@
+{
+  "name": "Invertis Innovation & Incubation",
+  "short_name": "Invertis III",
+  "description": "Invertis Innovation & Incubation - Empowering Startups & Entrepreneurs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/circlelogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/circlelogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "business",
+    "innovation"
+  ],
+  "lang": "en-IN",
+  "dir": "ltr"
+}

@@ -18,7 +18,7 @@ export function IntroductionSection() {
           transition={{ duration: 0.6 }}
         >
           <Image
-            src="/assets/About_image.jpg"
+            src="/assets/intro.jpg"
             alt="About III"
             fill
             className="object-cover"
