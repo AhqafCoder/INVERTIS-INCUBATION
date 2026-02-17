@@ -52,10 +52,10 @@ export const metadata: Metadata = {
     description: "Join the leading innovation and incubation hub at Invertis University. Get mentoring, funding, and resources to transform your ideas into successful businesses.",
     images: [
       {
-        url: "/assets/incub-logo-final.png",
+        url: "/assets/social-banner.png",
         width: 1200,
         height: 630,
-        alt: "Invertis Innovation & Incubation Logo",
+        alt: "Invertis Innovation & Incubation - Empowering Startups & Entrepreneurs",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Invertis Innovation & Incubation | Empowering Startups & Entrepreneurs",
     description: "Join the leading innovation and incubation hub at Invertis University. Get mentoring, funding, and resources to transform your ideas into successful businesses.",
-    images: ["/assets/incub-logo-final.png"],
+    images: ["/assets/social-banner.png"],
     creator: "@invertisuniv",
   },
   robots: {

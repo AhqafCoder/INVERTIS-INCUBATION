@@ -1,7 +1,6 @@
 import { Hero } from "@/components/hero";
 import { QuickStatsSection } from "@/components/sections/quick-stats";
 import { IntroductionSection } from "@/components/sections/introduction";
-import { ImpactStatsSection } from "@/components/sections/impact-stats";
 import { FundingIncentivesSection } from "@/components/sections/funding-incentives";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { PartnersSection } from "@/components/sections/partners";
@@ -14,7 +13,7 @@ export default function Home() {
       <Hero />
       <QuickStatsSection />
       <IntroductionSection />
-      <ImpactStatsSection />
+      
       <FundingIncentivesSection />
       <TestimonialsSection />
       <PartnersSection />

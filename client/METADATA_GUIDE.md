@@ -56,34 +56,33 @@ Implemented in the root layout with:
 ### 6. **SEO Helper Component** (`/client/components/SEO.tsx`)
 Reusable component for custom page metadata (for client components)
 
-## 🎨 Icon Configuration
+## 🎨 Icon & Image Configuration
 
 ### Current Setup
-The website uses `/assets/circlelogo.png` as the primary icon. This is configured for:
-- Browser favicon
-- Apple Touch Icon
-- PWA app icons
+- **Favicon (Tab Icon)**: `/assets/circlelogo.png` - Circular logo for browser tabs and app icons
+- **Social Media Banner**: `/assets/social-banner.png` - Full banner for Facebook, WhatsApp, Twitter, LinkedIn sharing
 
-### 🔧 To Update the Favicon:
+### 🔧 Image Files Required:
 
-1. **Recommended Icon Sizes:**
-   - 16x16 (browser tab)
-   - 32x32 (browser tab HD)
-   - 180x180 (Apple Touch Icon)
-   - 192x192 (Android)
-   - 512x512 (PWA splash screen)
+1. **Social Media Banner** (`/client/public/assets/social-banner.png`)
+   - **Dimensions**: 1200x630 pixels (Facebook/OG recommended size)
+   - **Content**: The full "INVERTIS INNOVATION & INCUBATION" banner with three colored bars
+   - **Format**: PNG with transparent or white background
+   - **Usage**: Facebook, WhatsApp, Twitter, LinkedIn previews
+   
+   ⚠️ **Action Required**: Save the banner image as `social-banner.png` in `/client/public/assets/`
 
-2. **Replace the favicon.ico:**
-   ```
-   /client/app/favicon.ico
-   ```
-   Replace this file with a new .ico file, or Next.js will automatically use the `circlelogo.png`
+2. **Favicon** (`/assets/circlelogo.png`)
+   - **Dimensions**: Square (512x512 recommended)
+   - **Content**: Circular logo only
+   - **Usage**: Browser tabs, bookmarks, app icons
+   - ✅ Already configured
 
-3. **For Best Results:**
-   - Use a square PNG image (512x512 recommended)
-   - Ensure the logo is centered with some padding
-   - Use the `circlelogo.png` or `round logo.png` from assets
-   - Next.js will automatically optimize and generate multiple sizes
+### Recommended Image Sizes:
+- **Social Banner**: 1200x630 (OG standard)
+- **Favicon**: 512x512 (square)
+- **Apple Touch Icon**: 180x180
+- **Android Icon**: 192x192 & 512x512
 
 ## 🔍 SEO Best Practices Implemented
 
